@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box; }
+
+body {
+  background: #fdf6e3;
+  text-align: center; }
+
+h1 {
+  font-family: "Rambla";
+  font-weight: 400; }
+
+.menu {
+  list-style-type: disc;
+  -webkit-margin-before: 0em;
+  -webkit-margin-after: 0em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  -webkit-padding-start: 0px;
+  display: block;
+  margin: auto;
+  width: 35%;
+  background: #565656;
+  border-radius: 5px; }
+  .menu:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0; }
+
+li {
+  float: left;
+  width: 25%;
+  text-align: center;
+  padding: 10px 0 7px;
+  border-right: 1px solid #333333;
+  border-left: 1px solid #666666; }
+  li:first-child {
+    border-left: none; }
+  li:last-child {
+    border-right: none; }
+
+i[class*="icon"] {
+  font-size: 1.5em; }
