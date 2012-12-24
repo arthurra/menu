@@ -10,19 +10,17 @@ h1 {
   font-weight: 400; }
 
 .menu {
-  list-style-type: disc;
+  list-style-type: none;
   -webkit-margin-before: 0em;
   -webkit-margin-after: 0em;
   -webkit-margin-start: 0px;
   -webkit-margin-end: 0px;
   -webkit-padding-start: 0px;
   display: block;
+  overflow: hidden;
   margin: auto;
   width: 35%;
-  background: #565656;
-  border-radius: 5px;
-  border-bottom: 1px solid #333333;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.35); }
+  border-radius: 5px; }
   .menu:after {
     content: ".";
     display: block;
@@ -31,26 +29,47 @@ h1 {
     line-height: 0;
     height: 0; }
 
-li {
+.menu > li {
   float: left;
   width: 25%;
   text-align: center;
-  padding: 10px 0 7px;
-  border-top: 3px solid #888888;
-  border-right: 1px solid #333333;
-  border-left: 1px solid #666666; }
-  li:first-child {
-    border-left: none;
-    border-radius: 5px 0 0 5px; }
-  li:last-child {
-    border-right: none;
-    border-radius: 0 5px 5px 0; }
-  li:hover {
-    border-top: 3px solid #cb4a17;
-    background: -webkit-linear-gradient(#565656, #3c3c3c); }
-    li:hover i {
-      color: #cb4a17;
+  border-top: 3px solid #888888; }
+  .menu > li:hover {
+    border-top: 3px solid #cb4a17; }
+    .menu > li:hover i {
       text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25); }
+
+.submenu {
+  list-style-type: none;
+  -webkit-margin-before: 0em;
+  -webkit-margin-after: 0em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  -webkit-padding-start: 0px;
+  border-radius: 5px;
+  position: relative;
+  top: -10.25em;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.35);
+  -webkit-transition: top 0.5s; }
+  .submenu li {
+    background: #565656;
+    padding: 1em 0 0.75em;
+    border-bottom: 1px solid #333333;
+    border-top: 1px solid #666666;
+    border-right: 1px solid #333333;
+    border-left: 1px solid #666666; }
+    .submenu li:hover {
+      background: -webkit-linear-gradient(#565656, #3c3c3c); }
+      .submenu li:hover i {
+        color: #cb4a17; }
+  .submenu:active {
+    top: 0em; }
+
+.menu li:first-child .submenu li:last-child {
+  border-bottom-left-radius: 5px; }
+
+.menu li:last-child .submenu li:last-child {
+  border-bottom-right-radius: 5px; }
 
 i[class*="icon"] {
   font-size: 1.5em;

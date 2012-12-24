@@ -9,7 +9,7 @@
 		height: 0
 
 @mixin override
-	list-style-type: disc
+	list-style-type: none
 	-webkit-margin-before: 0em
 	-webkit-margin-after: 0em
 	-webkit-margin-start: 0px
@@ -30,33 +30,56 @@ h1
 .menu
 	@include override
 	@include clearfix
+	//position: relative
+	overflow: hidden
 	margin: auto
 	width: 35%
-	background: #565656
+	//background: #565656
 	border-radius: 5px
-	border-bottom: 1px solid #333
-	box-shadow: 0 2px 5px rgba(0,0,0,0.35)
+	//border-bottom: 1px solid #333
 
-li
+.menu > li
 	float: left
+	//position: absolute
 	width: 25%
+	//height: 3.25em
 	text-align: center
-	padding: 10px 0 7px
+	//padding: 1em 0 0.75em
 	border-top: 3px solid #888
-	border-right: 1px solid #333
-	border-left: 1px solid #666
-	&:first-child
-		border-left: none
-		border-radius: 5px 0 0 5px
-	&:last-child
-		border-right: none
-		border-radius: 0 5px 5px 0
 	&:hover
 		border-top: 3px solid #CB4A17
-		background: -webkit-linear-gradient(#565656, #3C3C3C)
 		i
-			color: #CB4A17
 			text-shadow: 0 1px 1px rgba(0,0,0,0.25)
+
+.submenu
+	@include override
+	border-radius: 5px
+	position: relative
+	top: -10.25em
+	box-shadow: 0 2px 5px rgba(0,0,0,0.35)
+	-webkit-transition: top 0.5s
+	li
+		background: #565656
+		padding: 1em 0 0.75em
+		//border-radius: 5px
+		border-bottom: 1px solid #333
+		border-top: 1px solid #666
+		border-right: 1px solid #333
+		border-left: 1px solid #666
+		&:hover
+			background: -webkit-linear-gradient(#565656, #3C3C3C)
+			i
+				color: #CB4A17
+	&:active
+		top: 0em
+
+.menu li:first-child .submenu
+	li:last-child
+		border-bottom-left-radius: 5px
+
+.menu li:last-child .submenu
+	li:last-child
+		border-bottom-right-radius: 5px
 
 i[class*="icon"]
 	font-size: 1.5em
