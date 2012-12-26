@@ -20,7 +20,9 @@ h1 {
   overflow: hidden;
   margin: auto;
   width: 35%;
-  border-radius: 5px; }
+  border-radius: 5px;
+  position: relative;
+  padding: 0 10px 10px; }
   .menu:after {
     content: ".";
     display: block;
@@ -34,10 +36,12 @@ h1 {
   width: 25%;
   text-align: center;
   border-top: 3px solid #888888; }
+  .menu > li:first-child {
+    border-top-left-radius: 5px; }
+  .menu > li:last-child {
+    border-top-right-radius: 5px; }
   .menu > li:hover {
     border-top: 3px solid #cb4a17; }
-    .menu > li:hover i {
-      text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25); }
 
 .submenu {
   list-style-type: none;
@@ -48,28 +52,47 @@ h1 {
   -webkit-padding-start: 0px;
   border-radius: 5px;
   position: relative;
-  top: -10.25em;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.35);
-  -webkit-transition: top 0.5s; }
+  top: -10.15em;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+  -webkit-transition: top 0.5s;
+  z-index: 1; }
+  .submenu:hover + .label {
+    opacity: 1;
+    top: -10em; }
+  .submenu:active {
+    top: 0em; }
   .submenu li {
     background: #565656;
     padding: 1em 0 0.75em;
     border-bottom: 1px solid #333333;
     border-top: 1px solid #666666;
     border-right: 1px solid #333333;
-    border-left: 1px solid #666666; }
+    border-left: 1px solid #666666;
+    z-index: 1; }
     .submenu li:hover {
       background: -webkit-linear-gradient(#565656, #3c3c3c); }
       .submenu li:hover i {
-        color: #cb4a17; }
-  .submenu:active {
-    top: 0em; }
+        color: #cb4a17;
+        text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25); }
 
-.menu li:first-child .submenu li:last-child {
-  border-bottom-left-radius: 5px; }
+.menu li:first-child .submenu li {
+  border-left: none; }
+  .menu li:first-child .submenu li:last-child {
+    border-bottom-left-radius: 5px; }
 
-.menu li:last-child .submenu li:last-child {
-  border-bottom-right-radius: 5px; }
+.menu li:last-child .submenu li {
+  border-right: none; }
+  .menu li:last-child .submenu li:last-child {
+    border-bottom-right-radius: 5px; }
+
+.label {
+  font-family: "Rambla";
+  font-weight: 700;
+  color: #cb4a17;
+  position: relative;
+  top: -11em;
+  opacity: 0;
+  -webkit-transition: all 0.25s; }
 
 i[class*="icon"] {
   font-size: 1.5em;
