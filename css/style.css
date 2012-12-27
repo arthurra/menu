@@ -17,7 +17,6 @@ h1 {
   -webkit-margin-end: 0px;
   -webkit-padding-start: 0px;
   display: block;
-  overflow: hidden;
   margin: auto;
   width: 35%;
   border-radius: 5px;
@@ -37,11 +36,15 @@ h1 {
   text-align: center;
   border-top: 3px solid #888888; }
   .menu > li:first-child {
-    border-top-left-radius: 5px; }
+    border-radius: 10px 0 0 10px; }
   .menu > li:last-child {
-    border-top-right-radius: 5px; }
+    border-radius: 0 10px 10px 0; }
   .menu > li:hover {
     border-top: 3px solid #cb4a17; }
+  .menu > li .submenu:first-child {
+    border-top-left-radius: 5px; }
+  .menu > li .submenu:last-child {
+    border-top-right-radius: 5px; }
 
 .submenu {
   list-style-type: none;
@@ -54,13 +57,22 @@ h1 {
   position: relative;
   top: 0em;
   -webkit-transition: top 0.5s;
-  z-index: 1; }
+  z-index: 1;
+  height: 3.5em; }
   .submenu:hover + .label {
     opacity: 1;
-    top: -10em; }
+    top: -5.15em; }
   .submenu:hover li:nth-child(2), .submenu:hover li:nth-child(3), .submenu:hover li:nth-child(4) {
     top: 0;
+    opacity: 1;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35); }
+  .submenu:hover li:nth-child(1) {
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    background: -webkit-linear-gradient(#565656, #3c3c3c); }
+    .submenu:hover li:nth-child(1) i {
+      color: #cb4a17;
+      text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25); }
   .submenu:active {
     top: 0em; }
   .submenu li {
@@ -75,16 +87,19 @@ h1 {
     .submenu li:nth-child(1) {
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35); }
     .submenu li:nth-child(2) {
-      top: -3.5em;
+      top: -3.4em;
       z-index: 8;
+      opacity: 0;
       -webkit-transition: top 0.25s; }
     .submenu li:nth-child(3) {
-      top: -7em;
+      top: -6.8em;
       z-index: 6;
+      opacity: 0;
       -webkit-transition: top 0.25s; }
     .submenu li:nth-child(4) {
-      top: -10.5em;
+      top: -10.2em;
       z-index: 4;
+      opacity: 0;
       -webkit-transition: top 0.25s; }
     .submenu li:hover {
       background: -webkit-linear-gradient(#565656, #3c3c3c); }
@@ -94,11 +109,15 @@ h1 {
 
 .menu li:first-child .submenu li {
   border-left: none; }
+  .menu li:first-child .submenu li:first-child {
+    border-radius: 5px 0 0 5px; }
   .menu li:first-child .submenu li:last-child {
     border-bottom-left-radius: 5px; }
 
 .menu li:last-child .submenu li {
   border-right: none; }
+  .menu li:last-child .submenu li:first-child {
+    border-radius: 0 5px 5px 0; }
   .menu li:last-child .submenu li:last-child {
     border-bottom-right-radius: 5px; }
 
@@ -107,7 +126,7 @@ h1 {
   font-weight: 700;
   color: #cb4a17;
   position: relative;
-  top: -11em;
+  top: -3em;
   opacity: 0;
   -webkit-transition: all 0.25s; }
 
