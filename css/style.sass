@@ -18,9 +18,12 @@ body
 	margin: auto
 	padding-bottom: 200px
 
-h1
+h1, h2, h3, h4, p
 	font-family: "Rambla"
 	font-weight: 400
+
+h3
+	margin: 0
 
 ul
 	@include clearfix
@@ -29,12 +32,12 @@ ul
 	padding: 0
 	li
 		@include clearfix
-		width: 30%
-		height: 200px
+		width: 15%
+		height: 175px
 		background: grey
-		margin-right: 5%
+		margin-right: 2%
 		float: left
-		&:nth-of-type(3n)
+		&:nth-of-type(6n)
 			margin-right: 0
 		&:hover
 			background: lightgrey
@@ -43,7 +46,8 @@ ul
 				height: 0
 	&:active
 		+ .detail
-			height: 200
+			height: 450px
+			opacity: 1
 			box-shadow: 0 0 10px rgba(0,0,0,0.25) inset
 
 .detail
@@ -51,7 +55,38 @@ ul
 	margin: 15px 0
 	width: 100%
 	height: 1px
+	padding: 0 20px 20px
 	background: transparent
+	overflow: hidden
+	text-align: left
+	opacity: 0
 	-webkit-transition: all 0.3s
 	&:hover
 		background: transparent
+	h1
+		font-size: 24px
+	.project-photos
+		display: inline-block
+		float: left
+		width: 540px
+		height: 360px
+		background: grey
+	.prject-description
+		display: inline-block
+		width: 275px
+		margin-left: 20px
+		.quote
+			font-weight: bold
+			color: darkgray
+			margin-top: 50px
+			&::before
+				content: open-quote
+				position: relative
+				font-size: 2em
+				top: -0.25em
+				float: left
+			&::after
+				content: close-quote
+				position: relative
+				font-size: 2em
+				top: 0.6em
