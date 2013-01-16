@@ -3,10 +3,28 @@
     <link href='css/style.css' rel='stylesheet'>
     <link href='http://netdna.bootstrapcdn.com/font-awesome/2.0/css/font-awesome.css' rel='stylesheet'>
     <link href='http://fonts.googleapis.com/css?family=Rambla:400,700' rel='stylesheet'>
+    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js'></script>
+    <script>
+      //<![CDATA[
+        $(document).ready(function() {
+        	$("ul.row").click(function () {
+        		$(this).toggleClass("active");
+        	});
+        });
+        $(document).ready(function() {
+        	$("span.detail").click(function () {
+        		$(this).toggleClass("slide");
+        	});
+        });
+        window.onload = window.location.hash = 'nav';
+      //]]>
+    </script>
   </head>
   <body>
+    <div class='hyperheader'></div>
+    <div id='nav'></div>
     <h1>Thumbnail Gallery</h1>
-    <ul>
+    <ul class='row'>
       <li></li>
       <li></li>
       <li></li>
@@ -15,19 +33,37 @@
       <li></li>
     </ul>
     <span class='detail'>
-      <h2>Project Title</h2>
-      <div class='project-photos'></div>
-      <div class='prject-description'>
-        <h3>Project Description</h3>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. In id diam vel augue pharetra ornare eu a magna. Vestibulum quis risus laoreet enim egestas vehicula non quis tellus. In sapien orci, condimentum ac accumsan at, ornare accumsan arcu. Integer et euismod est.
-        </p>
-        <h4 class='quote'>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </h4>
+      <div class='project'>
+        <h2>Project Title</h2>
+        <div class='project-photos'></div>
+        <div class='prject-description'>
+          <h3>Project Description</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. In id diam vel augue pharetra ornare eu a magna. Vestibulum quis risus laoreet enim egestas vehicula non quis tellus. In sapien orci, condimentum ac accumsan at, ornare accumsan arcu. Integer et euismod est.
+          </p>
+          <h4 class='quote'>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </h4>
+        </div>
+      </div>
+      <div class='profile'>
+        <div class='headshot'></div>
+        <div class='contact'>
+          <ul>
+            <li>Portfolio</li>
+            <li>twitter</li>
+            <li>other stuff</li>
+          </ul>
+        </div>
+        <div class='profile-description'>
+          <h2>Student Name</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. In id diam vel augue pharetra ornare eu a magna. Vestibulum quis risus laoreet enim egestas vehicula non quis tellus. In sapien orci, condimentum ac accumsan at, ornare accumsan arcu. Integer et euismod est.
+          </p>
+        </div>
       </div>
     </span>
-    <ul>
+    <ul class='row active'>
       <li></li>
       <li></li>
       <li></li>
@@ -36,19 +72,21 @@
       <li></li>
     </ul>
     <span class='detail'>
-      <h2>Project Title</h2>
-      <div class='project-photos'></div>
-      <div class='prject-description'>
-        <h3>Project Description</h3>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. In id diam vel augue pharetra ornare eu a magna. Vestibulum quis risus laoreet enim egestas vehicula non quis tellus. In sapien orci, condimentum ac accumsan at, ornare accumsan arcu. Integer et euismod est.
-        </p>
-        <h4 class='quote'>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </h4>
+      <div class='project'>
+        <h2>Project Title</h2>
+        <div class='project-photos'></div>
+        <div class='prject-description'>
+          <h3>Project Description</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. In id diam vel augue pharetra ornare eu a magna. Vestibulum quis risus laoreet enim egestas vehicula non quis tellus. In sapien orci, condimentum ac accumsan at, ornare accumsan arcu. Integer et euismod est.
+          </p>
+          <h4 class='quote'>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </h4>
+        </div>
       </div>
     </span>
-    <ul>
+    <ul class='row'>
       <li></li>
       <li></li>
       <li></li>
@@ -57,7 +95,7 @@
       <li></li>
     </ul>
     <span class='detail'></span>
-    <ul>
+    <ul class='row'>
       <li></li>
       <li></li>
       <li></li>
@@ -66,7 +104,7 @@
       <li></li>
     </ul>
     <span class='detail'></span>
-    <ul>
+    <ul class='row'>
       <li></li>
       <li></li>
       <li></li>
@@ -75,7 +113,7 @@
       <li></li>
     </ul>
     <span class='detail'></span>
-    <ul>
+    <ul class='row'>
       <li></li>
       <li></li>
       <li></li>

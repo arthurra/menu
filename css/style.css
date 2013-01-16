@@ -4,7 +4,7 @@
 body {
   background: #fdf6e3;
   text-align: center;
-  width: 950px;
+  width: 90%;
   margin: auto;
   padding-bottom: 200px; }
 
@@ -15,45 +15,52 @@ h1, h2, h3, h4, p {
 h3 {
   margin: 0; }
 
-ul {
+.hyperheader {
+  display: block;
+  width: 100%;
+  height: 450px;
+  background: gray; }
+
+ul.row {
   display: block;
   list-style: none;
   margin: 0;
   padding: 0; }
-  ul:after {
+  ul.row:after {
     content: ".";
     display: block;
     clear: both;
     visibility: hidden;
     line-height: 0;
     height: 0; }
-  ul li {
+  ul.row li {
     display: block;
     width: 15%;
-    height: 175px;
+    height: 120px;
     background: grey;
     margin-right: 2%;
     float: left; }
-    ul li:after {
+    ul.row li:after {
       content: ".";
       display: block;
       clear: both;
       visibility: hidden;
       line-height: 0;
       height: 0; }
-    ul li:nth-of-type(6n) {
+    ul.row li:nth-of-type(6n) {
       margin-right: 0; }
-    ul li:hover {
+    ul.row li:hover {
       background: lightgrey; }
-    ul li:active .detail {
+    ul.row li:active .detail {
       height: 0; }
-  ul:active + .detail {
+  ul.row:active + .detail, ul.row.active + .detail {
     height: 450px;
     opacity: 1;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.25) inset; }
 
 .detail {
   display: block;
+  overflow: hidden;
   margin: 15px 0;
   width: 100%;
   height: 1px;
@@ -65,30 +72,60 @@ ul {
   -webkit-transition: all 0.3s; }
   .detail:hover {
     background: transparent; }
+  .detail.slide .project {
+    left: -1000px; }
+  .detail.slide .profile {
+    left: 0; }
   .detail h1 {
     font-size: 24px; }
-  .detail .project-photos {
-    display: inline-block;
-    float: left;
-    width: 540px;
-    height: 360px;
-    background: grey; }
-  .detail .prject-description {
-    display: inline-block;
-    width: 275px;
-    margin-left: 20px; }
-    .detail .prject-description .quote {
-      font-weight: bold;
-      color: darkgrey;
-      margin-top: 50px; }
-      .detail .prject-description .quote::before {
-        content: open-quote;
-        position: relative;
-        font-size: 2em;
-        top: -0.25em;
-        float: left; }
-      .detail .prject-description .quote::after {
-        content: close-quote;
-        position: relative;
-        font-size: 2em;
-        top: 0.6em; }
+  .detail .project {
+    position: relative;
+    -webkit-transition: left 0.3s; }
+    .detail .project .project-photos {
+      display: inline-block;
+      float: left;
+      width: 60%;
+      height: 360px;
+      background: grey; }
+    .detail .project .prject-description {
+      display: inline-block;
+      width: 35%;
+      margin-left: 20px; }
+      .detail .project .prject-description .quote {
+        font-weight: bold;
+        color: darkgrey;
+        margin-top: 50px; }
+        .detail .project .prject-description .quote::before {
+          content: open-quote;
+          position: relative;
+          font-size: 2em;
+          top: -0.25em;
+          float: left; }
+        .detail .project .prject-description .quote::after {
+          content: close-quote;
+          position: relative;
+          font-size: 2em;
+          top: 0.6em; }
+  .detail .profile {
+    position: relative;
+    top: -400px;
+    left: 1000px;
+    -webkit-transition: left 0.3s; }
+    .detail .profile .headshot {
+      width: 100%;
+      height: 200px;
+      background: gray; }
+    .detail .profile .contact {
+      width: 22%;
+      display: inline-block;
+      float: left;
+      margin-top: 55px;
+      margin-right: 3%;
+      border-right: 1px solid darkgrey;
+      font-family: "Rambla";
+      font-weight: 400; }
+      .detail .profile .contact ul {
+        list-style: circle; }
+    .detail .profile .profile-description {
+      width: 70%;
+      display: inline-block; }
