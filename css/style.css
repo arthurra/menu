@@ -50,6 +50,7 @@ ul.row {
     height: 0; }
   ul.row li {
     display: block;
+    position: relative;
     width: 15%;
     height: 120px;
     background: grey;
@@ -69,13 +70,20 @@ ul.row {
       background: lightgrey;
       height: 200px;
       margin-top: -40px;
-      margin-bottom: -40px; }
+      margin-bottom: -40px;
+      z-index: 1000; }
     ul.row li:active .detail {
       height: 0; }
   ul.row:active + .detail, ul.row.active + .detail {
     height: 450px;
     opacity: 1;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.25) inset; }
+
+ul.row.wide li {
+  width: 100%;
+  margin-bottom: 15px; }
+  ul.row.wide li:hover {
+    margin-bottom: -25px; }
 
 .detail {
   display: block;
