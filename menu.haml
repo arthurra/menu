@@ -12,6 +12,10 @@
 
 				$("span.detail").click(function () {
 					$(this).toggleClass("slide");
+
+					$("div.next").toggleClass("visible");
+
+					$("div.prev").toggleClass("visible");
 				});
 
 				$("div.layout-button").click(function () {
@@ -22,17 +26,83 @@
 	%body
 		.hyperheader
 		#nav
+			%ul
+				%li projects
+				%li print
+				%li motion
+				%li interactive
+				%li#people-link people
+			/ #people
+			/ 	%ul
+			/ 		%li Student Name
+			/ 		%li Student Name
+			/ 		%li Student Name
+			/ 		%li Student Name
+			/ 		%li Student Name
+			/ 		%li Student Name
+			/ 		%li Student Name
+			/ 		%li Student Name
+			/ 		%li Student Name
+			/ 		%li Student Name
+			/ 		%li Student Name
+			/ 		%li Student Name
+			/ 		%li Student Name
+			/ 		%li Student Name
+			/ 		%li Student Name
+			/ 		%li Student Name
+			/ 		%li Student Name
+			/ 		%li Student Name
+			/ 		%li Student Name
+			/ 		%li Student Name
 		%h1 Thumbnail Gallery
 		.layout-button
 			%p toggle
 		%ul.row
 			%li
+				.wide-info
+					.thumb
+					.short-des
+						%h3 Project Title
+						%p
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. 
 			%li
+				.wide-info
+					.thumb
+					.short-des
+						%h3 Project Title
+						%p
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. 
 			%li
+				.wide-info
+					.thumb
+					.short-des
+						%h3 Project Title
+						%p
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. 
 			%li
+				.wide-info
+					.thumb
+					.short-des
+						%h3 Project Title
+						%p
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. 
 			%li
+				.wide-info
+					.thumb
+					.short-des
+						%h3 Project Title
+						%p
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. 
 			%li
+				.wide-info
+					.thumb
+					.short-des
+						%h3 Project Title
+						%p
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. 
 		%span.detail
+			.prev
+			.next.visible
 			.project
 				%h2 Project Title
 				.project-photos

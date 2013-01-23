@@ -8,7 +8,7 @@ body {
   margin: auto;
   padding-bottom: 200px; }
 
-h1, h2, h3, h4, p {
+h1, h2, h3, h4, p, li {
   font-family: "Rambla";
   font-weight: 400; }
 
@@ -23,7 +23,9 @@ h3 {
 
 #nav {
   height: 50px;
-  background: gray; }
+  background: gray;
+  position: relative;
+  z-index: 100; }
   #nav::after {
     content: "";
     display: block;
@@ -33,6 +35,45 @@ h3 {
     height: 0;
     border: solid 25px;
     border-color: transparent transparent #fdf6e3 transparent; }
+  #nav ul {
+    display: block;
+    list-style: none;
+    margin: 0;
+    position: relative;
+    z-index: 100; }
+    #nav ul:after {
+      content: ".";
+      display: block;
+      clear: both;
+      visibility: hidden;
+      line-height: 0;
+      height: 0; }
+    #nav ul li {
+      float: left;
+      margin-right: 20px;
+      margin-top: 5px;
+      margin-bottom: 5px;
+      height: 40px;
+      border-radius: 6px;
+      border: 1px solid transparent;
+      padding: 10px 10px 0; }
+      #nav ul li:hover {
+        border: 1px solid #333333; }
+  #nav #people {
+    display: block;
+    position: relative;
+    background: lightgrey;
+    z-index: 1; }
+    #nav #people ul {
+      display: block;
+      position: absolute; }
+      #nav #people ul:after {
+        content: ".";
+        display: block;
+        clear: both;
+        visibility: hidden;
+        line-height: 0;
+        height: 0; }
 
 .layout-button {
   display: block;
@@ -77,6 +118,21 @@ ul.row {
       visibility: hidden;
       line-height: 0;
       height: 0; }
+    ul.row li .wide-info {
+      opacity: 0;
+      -webkit-transition: all 0.3s; }
+      ul.row li .wide-info .thumb {
+        width: 15%;
+        height: 100px;
+        background: lightgrey;
+        margin: 10px;
+        float: left; }
+      ul.row li .wide-info .short-des {
+        display: inline-block;
+        text-align: left;
+        width: 70%;
+        margin-top: 10px;
+        float: left; }
     ul.row li:nth-of-type(6n) {
       margin-right: 0; }
       ul.row li:nth-of-type(6n):hover {
@@ -87,6 +143,8 @@ ul.row {
       margin-left: -2%;
       margin-right: 0;
       z-index: 1000; }
+      ul.row li:hover .thumb {
+        background: gray; }
     ul.row li:active .detail {
       height: 0; }
   ul.row:active + .detail, ul.row.active + .detail {
@@ -98,10 +156,14 @@ ul.row.wide li {
   width: 100%;
   margin-bottom: 15px; }
   ul.row.wide li:hover {
-    margin-bottom: -25px; }
+    height: 160px;
+    margin: -20px 0; }
+  ul.row.wide li .wide-info {
+    opacity: 1; }
 
 .detail {
   display: block;
+  position: relative;
   overflow: hidden;
   margin: 15px 0;
   width: 100%;
@@ -118,6 +180,35 @@ ul.row.wide li {
     left: -100%; }
   .detail.slide .profile {
     left: 0; }
+  .detail .prev, .detail .next {
+    position: absolute;
+    height: 100%;
+    width: 25px;
+    background: lightgrey;
+    cursor: pointer;
+    visibility: hidden; }
+    .detail .prev:hover, .detail .next:hover {
+      background: gray; }
+    .detail .prev::after, .detail .next::after {
+      content: "";
+      display: block;
+      position: relative;
+      top: 50%;
+      width: 0;
+      height: 0;
+      border: solid 15px; }
+    .detail .prev.visible, .detail .next.visible {
+      visibility: visible; }
+  .detail .prev {
+    left: 0; }
+    .detail .prev::after {
+      border-color: transparent #fdf6e3 transparent transparent;
+      position: relative;
+      left: -5px; }
+  .detail .next {
+    right: 0; }
+    .detail .next::after {
+      border-color: transparent transparent transparent #fdf6e3; }
   .detail h1 {
     font-size: 24px; }
   .detail .project {

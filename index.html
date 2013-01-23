@@ -13,6 +13,10 @@
         
         	$("span.detail").click(function () {
         		$(this).toggleClass("slide");
+        
+        		$("div.next").toggleClass("visible");
+        
+        		$("div.prev").toggleClass("visible");
         	});
         
         	$("div.layout-button").click(function () {
@@ -25,20 +29,112 @@
   </head>
   <body>
     <div class='hyperheader'></div>
-    <div id='nav'></div>
+    <div id='nav'>
+      <ul>
+        <li>projects</li>
+        <li>print</li>
+        <li>motion</li>
+        <li>interactive</li>
+        <li id='people-link'>people</li>
+      </ul>
+      <!-- #people -->
+      <!-- %ul -->
+      <!-- %li Student Name -->
+      <!-- %li Student Name -->
+      <!-- %li Student Name -->
+      <!-- %li Student Name -->
+      <!-- %li Student Name -->
+      <!-- %li Student Name -->
+      <!-- %li Student Name -->
+      <!-- %li Student Name -->
+      <!-- %li Student Name -->
+      <!-- %li Student Name -->
+      <!-- %li Student Name -->
+      <!-- %li Student Name -->
+      <!-- %li Student Name -->
+      <!-- %li Student Name -->
+      <!-- %li Student Name -->
+      <!-- %li Student Name -->
+      <!-- %li Student Name -->
+      <!-- %li Student Name -->
+      <!-- %li Student Name -->
+      <!-- %li Student Name -->
+    </div>
     <h1>Thumbnail Gallery</h1>
     <div class='layout-button'>
       <p>toggle</p>
     </div>
     <ul class='row'>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
+      <li>
+        <div class='wide-info'>
+          <div class='thumb'></div>
+          <div class='short-des'>
+            <h3>Project Title</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+            </p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class='wide-info'>
+          <div class='thumb'></div>
+          <div class='short-des'>
+            <h3>Project Title</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+            </p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class='wide-info'>
+          <div class='thumb'></div>
+          <div class='short-des'>
+            <h3>Project Title</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+            </p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class='wide-info'>
+          <div class='thumb'></div>
+          <div class='short-des'>
+            <h3>Project Title</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+            </p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class='wide-info'>
+          <div class='thumb'></div>
+          <div class='short-des'>
+            <h3>Project Title</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+            </p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class='wide-info'>
+          <div class='thumb'></div>
+          <div class='short-des'>
+            <h3>Project Title</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+            </p>
+          </div>
+        </div>
+      </li>
     </ul>
     <span class='detail'>
+      <div class='prev'></div>
+      <div class='next visible'></div>
       <div class='project'>
         <h2>Project Title</h2>
         <div class='project-photos'></div>
