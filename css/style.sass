@@ -31,6 +31,20 @@ h3
 	height: 450px
 	background: gray
 
+#nav
+	height: 50px
+	background: gray
+	&::after
+		content: ""
+		display: block
+		float: right
+		margin-right: 15px
+		width: 0
+		height: 0
+		border: solid 25px
+		border-color: transparent transparent #FDF6E3 transparent
+
+
 .layout-button
 	display: block
 	height: 40px
@@ -62,11 +76,14 @@ ul.row
 		-webkit-transition: all 0.3s
 		&:nth-of-type(6n)
 			margin-right: 0
+			&:hover
+				margin-right: -2%
 		&:hover
 			background: lightgrey
-			height: 200px
-			margin-top: -40px
-			margin-bottom: -40px
+			//height: 200px
+			width: 19%
+			margin-left: -2%
+			margin-right: 0
 			z-index: 1000
 		&:active
 			.detail

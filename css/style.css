@@ -21,6 +21,19 @@ h3 {
   height: 450px;
   background: gray; }
 
+#nav {
+  height: 50px;
+  background: gray; }
+  #nav::after {
+    content: "";
+    display: block;
+    float: right;
+    margin-right: 15px;
+    width: 0;
+    height: 0;
+    border: solid 25px;
+    border-color: transparent transparent #fdf6e3 transparent; }
+
 .layout-button {
   display: block;
   height: 40px;
@@ -66,11 +79,13 @@ ul.row {
       height: 0; }
     ul.row li:nth-of-type(6n) {
       margin-right: 0; }
+      ul.row li:nth-of-type(6n):hover {
+        margin-right: -2%; }
     ul.row li:hover {
       background: lightgrey;
-      height: 200px;
-      margin-top: -40px;
-      margin-bottom: -40px;
+      width: 19%;
+      margin-left: -2%;
+      margin-right: 0;
       z-index: 1000; }
     ul.row li:active .detail {
       height: 0; }
