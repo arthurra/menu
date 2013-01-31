@@ -3,6 +3,7 @@
     <link href='css/style.css' rel='stylesheet'>
     <link href='http://netdna.bootstrapcdn.com/font-awesome/2.0/css/font-awesome.css' rel='stylesheet'>
     <link href='http://fonts.googleapis.com/css?family=Rambla:400,700' rel='stylesheet'>
+    <link href='http://netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css'>
     <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js'></script>
     <script>
       //<![CDATA[
@@ -22,6 +23,14 @@
         	$("div.layout-button").click(function () {
         		$("ul.row").toggleClass("wide");
         	});
+        
+        	$("li#people-link").click(function () {
+        		$("div#people").toggleClass("hidden");
+        	});
+        
+        	$("ul.row li").click(function () {
+        		$(this).toggleClass("active");
+        	});
         });
         window.onload = window.location.hash = 'nav';
       //]]>
@@ -31,39 +40,100 @@
     <div class='hyperheader'></div>
     <div id='nav'>
       <ul>
-        <li>projects</li>
+        <li>
+          <h1>Graphic Communication Design</h1>
+        </li>
         <li>print</li>
         <li>motion</li>
         <li>interactive</li>
         <li id='people-link'>people</li>
+        <li>
+          <div class='layout'>
+            <div class='layout-button'>
+              <i class='icon-reorder'></i>
+            </div>
+            <div class='layout-button'>
+              <i class='icon-th'></i>
+            </div>
+          </div>
+        </li>
       </ul>
-      <!-- #people -->
-      <!-- %ul -->
-      <!-- %li Student Name -->
-      <!-- %li Student Name -->
-      <!-- %li Student Name -->
-      <!-- %li Student Name -->
-      <!-- %li Student Name -->
-      <!-- %li Student Name -->
-      <!-- %li Student Name -->
-      <!-- %li Student Name -->
-      <!-- %li Student Name -->
-      <!-- %li Student Name -->
-      <!-- %li Student Name -->
-      <!-- %li Student Name -->
-      <!-- %li Student Name -->
-      <!-- %li Student Name -->
-      <!-- %li Student Name -->
-      <!-- %li Student Name -->
-      <!-- %li Student Name -->
-      <!-- %li Student Name -->
-      <!-- %li Student Name -->
-      <!-- %li Student Name -->
     </div>
-    <h1>Thumbnail Gallery</h1>
-    <div class='layout-button'>
-      <p>toggle</p>
+    <div class='hidden' id='people'>
+      <ul>
+        <li>Student Name</li>
+        <li>Student Name</li>
+        <li>Student Name</li>
+        <li>Student Name</li>
+        <li>Student Name</li>
+        <li>Student Name</li>
+        <li>Student Name</li>
+        <li>Student Name</li>
+        <li>Student Name</li>
+        <li>Student Name</li>
+        <li>Student Name</li>
+        <li>Student Name</li>
+        <li>Student Name</li>
+        <li>Student Name</li>
+        <li>Student Name</li>
+        <li>Student Name</li>
+        <li>Student Name</li>
+        <li>Student Name</li>
+        <li>Student Name</li>
+        <li>Student Name</li>
+        <li>Student Name</li>
+        <li>Student Name</li>
+        <li>Student Name</li>
+        <li>Student Name</li>
+        <li>Student Name</li>
+        <li>Student Name</li>
+        <li>Student Name</li>
+        <li>Student Name</li>
+        <li>Student Name</li>
+        <li>Student Name</li>
+        <li>Student Name</li>
+        <li>Student Name</li>
+        <li>Student Name</li>
+        <li>Student Name</li>
+        <li>Student Name</li>
+        <li>Student Name</li>
+        <li>Student Name</li>
+        <li>Student Name</li>
+        <li>Student Name</li>
+        <li>Student Name</li>
+      </ul>
     </div>
+    <br>
+    <div class='class-photo'>
+      <div class='class-des'>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+        </p>
+      </div>
+    </div>
+    <div class='categories'>
+      <ul>
+        <li>
+          <h4>Print</h4>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+          </p>
+        </li>
+        <li>
+          <h4>Motion</h4>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+          </p>
+        </li>
+        <li>
+          <h4>Interactive</h4>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+          </p>
+        </li>
+      </ul>
+    </div>
+    <hr>
     <ul class='row'>
       <li>
         <div class='wide-info'>
@@ -73,6 +143,38 @@
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
             </p>
+          </div>
+          <div class='small-profile'>
+            <div class='headshot'></div>
+            <h3>Student Name</h3>
+            <div class='profile-description'>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. In id diam vel augue pharetra ornare eu a magna. Vestibulum quis risus laoreet enim egestas vehicula non quis tellus.
+              </p>
+            </div>
+            <div class='contact'>
+              <ul>
+                <li>Portfolio</li>
+                <li>twitter</li>
+                <li>other stuff</li>
+              </ul>
+            </div>
+          </div>
+          <div class='small-profile'>
+            <div class='headshot'></div>
+            <h3>Student Name</h3>
+            <div class='profile-description'>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. In id diam vel augue pharetra ornare eu a magna. Vestibulum quis risus laoreet enim egestas vehicula non quis tellus.
+              </p>
+            </div>
+            <div class='contact'>
+              <ul>
+                <li>Portfolio</li>
+                <li>twitter</li>
+                <li>other stuff</li>
+              </ul>
+            </div>
           </div>
         </div>
       </li>
@@ -134,36 +236,62 @@
     </ul>
     <span class='detail'>
       <div class='prev'></div>
-      <div class='next visible'></div>
+      <div class='next'></div>
       <div class='project'>
         <h2>Project Title</h2>
-        <div class='project-photos'></div>
-        <div class='prject-description'>
-          <h3>Project Description</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. In id diam vel augue pharetra ornare eu a magna. Vestibulum quis risus laoreet enim egestas vehicula non quis tellus. In sapien orci, condimentum ac accumsan at, ornare accumsan arcu. Integer et euismod est.
-          </p>
-          <h4 class='quote'>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          </h4>
+        <div class='project-photos'>
+          <div class='project-description'>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. In id diam vel augue pharetra ornare eu a magna. Vestibulum quis risus laoreet enim egestas vehicula non quis tellus. In sapien orci, condimentum ac accumsan at, ornare accumsan arcu. Integer et euismod est.
+            </p>
+            <!-- %h4.quote -->
+            <!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit. -->
+          </div>
+        </div>
+        <div class='small-profile'>
+          <div class='headshot'></div>
+          <h3>Student Name</h3>
+          <div class='profile-description'>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. In id diam vel augue pharetra ornare eu a magna. Vestibulum quis risus laoreet enim egestas vehicula non quis tellus.
+            </p>
+          </div>
+          <div class='contact'>
+            <ul>
+              <li>Portfolio</li>
+              <li>twitter</li>
+              <li>other stuff</li>
+            </ul>
+          </div>
+        </div>
+        <div class='small-profile'>
+          <div class='headshot'></div>
+          <h3>Student Name</h3>
+          <div class='profile-description'>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. In id diam vel augue pharetra ornare eu a magna. Vestibulum quis risus laoreet enim egestas vehicula non quis tellus.
+            </p>
+          </div>
+          <div class='contact'>
+            <ul>
+              <li>Portfolio</li>
+              <li>twitter</li>
+              <li>other stuff</li>
+            </ul>
+          </div>
         </div>
       </div>
-      <div class='profile'>
-        <div class='headshot'></div>
-        <div class='contact'>
-          <ul>
-            <li>Portfolio</li>
-            <li>twitter</li>
-            <li>other stuff</li>
-          </ul>
-        </div>
-        <div class='profile-description'>
-          <h2>Student Name</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. In id diam vel augue pharetra ornare eu a magna. Vestibulum quis risus laoreet enim egestas vehicula non quis tellus. In sapien orci, condimentum ac accumsan at, ornare accumsan arcu. Integer et euismod est.
-          </p>
-        </div>
-      </div>
+      <!-- .profile -->
+      <!-- .headshot -->
+      <!-- .contact -->
+      <!-- %ul -->
+      <!-- %li Portfolio -->
+      <!-- %li twitter -->
+      <!-- %li other stuff -->
+      <!-- .profile-description -->
+      <!-- %h2 Student Name -->
+      <!-- %p -->
+      <!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. In id diam vel augue pharetra ornare eu a magna. Vestibulum quis risus laoreet enim egestas vehicula non quis tellus. In sapien orci, condimentum ac accumsan at, ornare accumsan arcu. Integer et euismod est. -->
     </span>
     <ul class='row'>
       <li></li>

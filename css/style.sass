@@ -12,9 +12,10 @@
 	box-sizing: border-box
 
 body
-	background: #FDF6E3
+	//background: #FDF6E3
+	background: #fff
 	text-align: center
-	width: 90%
+	max-width: 1000px
 	margin: auto
 	padding-bottom: 200px
 
@@ -25,32 +26,67 @@ h1, h2, h3, h4, p, li
 h3
 	margin: 0
 
+p
+	font-size: 14px
+
 .hyperheader
 	display: block
 	width: 100%
-	height: 450px
-	background: gray
+	height: 2363px
+	background: lightgray
+	background-image: url("/images/header-bullshit-01.png")
+
+#about
+	@include clearfix
+	text-align: left
+	background: lightgray
+	padding: 25px
+	p
+		width: 40%
+		float: left
+	.about-pic
+		width: 50%
+		height: 200px
+		background: lightgray
+		float: right
 
 #nav
 	height: 50px
-	background: gray
+	background: lightgray
 	position: relative
-	z-index: 100
-	&::after
+	border-top: 1px solid black
+	z-index: 10000
+	text-align: center
+	position: fixed
+	top: 0
+	max-width: 1000px
+	// &::after
 		content: ""
 		display: block
 		float: right
 		margin-right: 15px
 		width: 0
 		height: 0
+		position: relative
+		top: -50px
 		border: solid 25px
 		border-color: transparent transparent #FDF6E3 transparent
+	&:after
+		content: ""
+		position: absolute
+		top: -1px
+		right: -105px
+		height: 49px
+		width: 120px
+		background: lightgray
+		border-top: 1px solid black
 	ul
 		@include clearfix
 		list-style: none
-		margin: 0
 		position: relative
 		z-index: 100
+		margin: auto
+		//width: 80%
 		li
 			float: left
 			margin-right: 20px
@@ -60,35 +96,88 @@ h3
 			border-radius: 6px
 			border: 1px solid transparent
 			padding: 10px 10px 0
+			cursor: pointer
+			h1
+				margin: 0
+				position: relative
+				top: -10px
 			&:hover
 				border: 1px solid #333
+				&:last-child
+					border: 1px solid transparent
 			
-	#people
-		display: block
-		position: relative
-		background: lightgray
-		z-index: 1
-		//top: -100px
-		ul
-			@include clearfix
-			position: absolute
-			li
-				//float: none
-
-.layout-button
+#people
 	display: block
-	height: 40px
-	width: 75px
-	padding: 10px
-	margin: 15px
-	text-align: center
-	color: white
-	border-radius: 6px
-	border: 1px solid rgba(0,0,0,0.25)
-	background: rgba(0,0,0,0.1)
-	cursor: pointer
-	p
-		margin: 0
+	position: fixed
+	background: lightgray
+	max-width: 1000px
+	top: 50px
+	z-index: 1
+	//top: -100px
+	overflow: hidden
+	height: 400px 
+	margin: auto
+	-webkit-transition: all 0.3s
+	ul
+		@include clearfix
+		list-style: none
+		li
+			float: left
+			width: 22%
+			margin: 5px
+	&.hidden
+		height: 0
+
+.layout
+	@include clearfix
+	position: absolute
+	right: -10%
+	&>p
+		float: left
+	.layout-button
+		float: left
+		padding: 0.2em 0.5em 0.3em
+		//margin: 0.75em 0.25em 0.75em 0.75em
+		text-align: center
+		border-radius: 6px
+		border: 1px solid transparent
+		&:hover
+			border: 1px solid rgba(0,0,0,0.25)
+			background: rgba(0,0,0,0.1)
+			cursor: pointer
+
+.class-photo
+	width: 100%
+	height: 400px
+	background: lightgray
+	position: relative
+	background-image: url("/images/class-photo.jpg")
+	.class-des
+		position: absolute
+		left: 25px
+		top: 25px
+		padding: 15px
+		background: rgba(255,255,255,0.5)
+		width: 300px
+		text-align: left
+		p
+			margin: 0
+
+.categories
+	ul
+		@include clearfix
+		list-style: none
+		margin: 100px 0
+		padding: 0
+		li
+			text-align: left
+			width: 30%
+			margin-right: 5%
+			padding: 15px
+			background: lightgray
+			float: left
+			&:last-child
+				margin-right: 0
 
 ul.row
 	@include clearfix
@@ -100,10 +189,15 @@ ul.row
 		position: relative
 		width: 15%
 		height: 120px
-		background: grey
+		background: lightgray
 		margin-right: 2%
 		float: left
-		-webkit-transition: all 0.3s
+		overflow: hidden
+		background-size: 150px
+		background-position: center
+		-webkit-transition: margin 0.3s
+		-webkit-transition: padding 0.3s
+		-webkit-transition: height 0.3s
 		.wide-info
 			opacity: 0
 			-webkit-transition: all 0.3s
@@ -113,43 +207,100 @@ ul.row
 				background: lightgray
 				margin: 10px
 				float: left
+				-webkit-transition: all 0.3s
 			.short-des
 				display: inline-block
 				text-align: left
 				width: 70%
 				margin-top: 10px
 				float: left
+				-webkit-transition: all 0.3s
+				pointer-events: none
+			h3
+				pointer-events: none
 		&:nth-of-type(6n)
 			margin-right: 0
 			&:hover
 				margin-right: -2%
 		&:hover
-			background: lightgrey
+			//background: lightgray
 			//height: 200px
-			width: 19%
-			margin-left: -2%
-			margin-right: 0
+			//width: 19%
+			//margin-left: -2%
+			//margin-right: 0
 			z-index: 1000
 			.thumb
-				background: gray
+				//background: lightgray
 		&:active
 			.detail
 				height: 0
 	&:active, &.active
 		+ .detail
-			height: 450px
+			height: 750px
 			opacity: 1
 			box-shadow: 0 0 10px rgba(0,0,0,0.25) inset
+
+ul.row li
+	background-size: 150px
+	background-position: center
+	&:nth-child(1), &:nth-child(7n)
+		background-image: url("/images/1-image1.jpg")
+	&:nth-child(2n)
+		background-image: url("/images/1-image2.jpg")
+	&:nth-child(3n)
+		background-image: url("/images/2-image1.jpg")
+	&:nth-child(4n)
+		background-image: url("/images/2-image2.jpg")
+	&:nth-child(5n)
+		background-image: url("/images/projectImage1.jpg")
+	&:nth-child(6n)
+		background-image: url("/images/projectImage2.jpg")
+
+ul.row li:hover
+	&:nth-child(1), &:nth-child(7n)
+		background-image: url("/images/cody.jpg")
+	&:nth-child(2n)
+		background-image: url("/images/mac.jpg")
+	&:nth-child(3n)
+		background-image: url("/images/jared.jpg")
+	&:nth-child(4n)
+		background-image: url("/images/ryan.jpg")
+	&:nth-child(5n)
+		background-image: url("/images/kanye.jpg")
+	&:nth-child(6n)
+		background-image: url("/images/taylor.jpg")
 
 ul.row.wide
 	li
 		width: 100%
 		margin-bottom: 15px
+		background-image: url("")
 		&:hover
 			height: 160px
-			margin: -20px 0
+			margin: 20px 0
+			padding: 20px 0 0 20px
+			background-image: url("")
+			//background: lightgray
+		&:active, &.active
+			height: 635px
+			.wide-info
+				position: relative
+				.thumb
+					width: 98%
+					height: 360px
+					background-image: url("/images/projectImage1.jpg")
+				.short-des
+					width: 30%
+					position: absolute
+					top: 30px
+					left: 30px
+					padding: 15px
+					background: rgba(255,255,255,0.7)
 		.wide-info
 			opacity: 1
+			.thumb
+				background-image: url("/images/projectImage1.jpg")
+
 
 .detail
 	display: block
@@ -158,12 +309,14 @@ ul.row.wide
 	margin: 15px 0
 	width: 100%
 	height: 1px
-	padding: 0 20px 20px
+	padding: 30px 30px 20px
 	background: transparent
 	overflow: hidden
 	text-align: left
 	opacity: 0
 	-webkit-transition: all 0.3s
+	p
+		margin-top: 0
 	&:hover
 		background: transparent
 	&.slide
@@ -175,11 +328,13 @@ ul.row.wide
 		position: absolute
 		height: 100%
 		width: 25px
+		margin-top: -30px
 		background: lightgray
 		cursor: pointer
 		visibility: hidden
+		z-index: 1000
 		&:hover
-			background: gray
+			background: lightgray
 		&::after
 			content: ""
 			display: block
@@ -209,29 +364,68 @@ ul.row.wide
 		-webkit-transition: left 0.3s
 		.project-photos
 			display: inline-block
-			float: left
-			width: 60%
+			position: relative
+			//float: left
+			width: 100%
 			height: 360px
-			background: grey
-		.prject-description
-			display: inline-block
-			width: 35%
-			margin-left: 20px
-			.quote
-				font-weight: bold
-				color: darkgray
-				margin-top: 50px
-				&::before
-					content: open-quote
-					position: relative
-					font-size: 2em
-					top: -0.25em
-					float: left
-				&::after
-					content: close-quote
-					position: relative
-					font-size: 2em
-					top: 0.6em
+			background: lightgray
+			background-image: url("/images/projectImage1.jpg")
+			.project-description
+				//display: inline-block
+				//width: 60%
+				//margin-left: 20px
+				position: absolute
+				top: 25px
+				left: 25px
+				padding: 15px
+				background: rgba(255,255,255,0.7)
+				width: 300px
+				.quote
+					font-weight: bold
+					color: darklightgray
+					margin-top: 50px
+					&::before
+						content: open-quote
+						position: relative
+						font-size: 2em
+						top: -0.25em
+						float: left
+					&::after
+						content: close-quote
+						position: relative
+						font-size: 2em
+						top: 0.6em
+
+.wide-info .small-profile .headshot
+	margin-left: 10px
+
+.small-profile
+	width: 45%
+	float: left
+	margin-top: 30px
+	margin-right: 4%
+	text-align: left
+	.headshot
+		width: 50px
+		height: 50px
+		background: lightgray
+		//display: inline-block
+		float: left
+		margin-right: 10px
+		background-image: url("/images/kanye.jpg")
+		background-size: 100% 100%
+	h3
+		display: inline-block
+		//position: relative
+		//top: -18px
+	p
+		padding-left: 60px
+	.contact
+		ul 
+			padding-left: 60px
+			li
+				float: left
+				width: 30%
 	.profile
 		position: relative
 		top: -375px 
@@ -240,14 +434,14 @@ ul.row.wide
 		.headshot
 			width: 100%
 			height: 200px
-			background: gray
+			background: lightgray
 		.contact
 			width: 22%
 			display: inline-block
 			float: left
 			margin-top: 55px
 			margin-right: 3%
-			border-right: 1px solid darkgray
+			border-right: 1px solid darklightgray
 			font-family: "Rambla"
 			font-weight: 400 
 			ul

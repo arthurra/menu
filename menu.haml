@@ -3,6 +3,7 @@
 		%link{:href => "css/style.css", :rel => "stylesheet"}
 		%link{:href => "http://netdna.bootstrapcdn.com/font-awesome/2.0/css/font-awesome.css", :rel => "stylesheet"}
 		%link{:href => "http://fonts.googleapis.com/css?family=Rambla:400,700", :rel => "stylesheet"}
+		%link{:href => "http://netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css"}
 		%script{:src => "http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"}
 		:javascript
 			$(document).ready(function() {
@@ -21,42 +22,94 @@
 				$("div.layout-button").click(function () {
 					$("ul.row").toggleClass("wide");
 				});
+
+				$("li#people-link").click(function () {
+					$("div#people").toggleClass("hidden");
+				});
+
+				$("ul.row li").click(function () {
+					$(this).toggleClass("active");
+				});
 			});
 			window.onload = window.location.hash = 'nav';
 	%body
 		.hyperheader
 		#nav
 			%ul
-				%li projects
+				%li
+					%h1 Graphic Communication Design
 				%li print
 				%li motion
 				%li interactive
 				%li#people-link people
-			/ #people
-			/ 	%ul
-			/ 		%li Student Name
-			/ 		%li Student Name
-			/ 		%li Student Name
-			/ 		%li Student Name
-			/ 		%li Student Name
-			/ 		%li Student Name
-			/ 		%li Student Name
-			/ 		%li Student Name
-			/ 		%li Student Name
-			/ 		%li Student Name
-			/ 		%li Student Name
-			/ 		%li Student Name
-			/ 		%li Student Name
-			/ 		%li Student Name
-			/ 		%li Student Name
-			/ 		%li Student Name
-			/ 		%li Student Name
-			/ 		%li Student Name
-			/ 		%li Student Name
-			/ 		%li Student Name
-		%h1 Thumbnail Gallery
-		.layout-button
-			%p toggle
+				%li
+					.layout
+						.layout-button
+							%i.icon-reorder
+						.layout-button
+							%i.icon-th
+		#people.hidden
+			%ul
+				%li Student Name
+				%li Student Name
+				%li Student Name
+				%li Student Name
+				%li Student Name
+				%li Student Name
+				%li Student Name
+				%li Student Name
+				%li Student Name
+				%li Student Name
+				%li Student Name
+				%li Student Name
+				%li Student Name
+				%li Student Name
+				%li Student Name
+				%li Student Name
+				%li Student Name
+				%li Student Name
+				%li Student Name
+				%li Student Name
+				%li Student Name
+				%li Student Name
+				%li Student Name
+				%li Student Name
+				%li Student Name
+				%li Student Name
+				%li Student Name
+				%li Student Name
+				%li Student Name
+				%li Student Name
+				%li Student Name
+				%li Student Name
+				%li Student Name
+				%li Student Name
+				%li Student Name
+				%li Student Name
+				%li Student Name
+				%li Student Name
+				%li Student Name
+				%li Student Name
+		%br
+		.class-photo
+			.class-des
+				%p
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+		.categories
+			%ul
+				%li
+					%h4 Print
+					%p
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+				%li
+					%h4 Motion
+					%p
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+				%li
+					%h4 Interactive
+					%p
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+		%hr
 		%ul.row
 			%li
 				.wide-info
@@ -65,6 +118,28 @@
 						%h3 Project Title
 						%p
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. 
+					.small-profile
+						.headshot
+						%h3 Student Name
+						.profile-description
+							%p 
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. In id diam vel augue pharetra ornare eu a magna. Vestibulum quis risus laoreet enim egestas vehicula non quis tellus.
+						.contact
+							%ul
+								%li Portfolio
+								%li twitter
+								%li other stuff
+					.small-profile
+						.headshot
+						%h3 Student Name
+						.profile-description
+							%p 
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. In id diam vel augue pharetra ornare eu a magna. Vestibulum quis risus laoreet enim egestas vehicula non quis tellus.
+						.contact
+							%ul
+								%li Portfolio
+								%li twitter
+								%li other stuff
 			%li
 				.wide-info
 					.thumb
@@ -102,27 +177,48 @@
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. 
 		%span.detail
 			.prev
-			.next.visible
+			.next
 			.project
 				%h2 Project Title
 				.project-photos
-				.prject-description	
-					%h3 Project Description
-					%p
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. In id diam vel augue pharetra ornare eu a magna. Vestibulum quis risus laoreet enim egestas vehicula non quis tellus. In sapien orci, condimentum ac accumsan at, ornare accumsan arcu. Integer et euismod est.
-					%h4.quote
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-			.profile
-				.headshot
-				.contact
-					%ul
-						%li Portfolio
-						%li twitter
-						%li other stuff
-				.profile-description
-					%h2 Student Name
-					%p
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. In id diam vel augue pharetra ornare eu a magna. Vestibulum quis risus laoreet enim egestas vehicula non quis tellus. In sapien orci, condimentum ac accumsan at, ornare accumsan arcu. Integer et euismod est.
+					.project-description	
+						%p
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. In id diam vel augue pharetra ornare eu a magna. Vestibulum quis risus laoreet enim egestas vehicula non quis tellus. In sapien orci, condimentum ac accumsan at, ornare accumsan arcu. Integer et euismod est.
+						/ %h4.quote
+						/ 	Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+				.small-profile
+					.headshot
+					%h3 Student Name
+					.profile-description
+						%p 
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. In id diam vel augue pharetra ornare eu a magna. Vestibulum quis risus laoreet enim egestas vehicula non quis tellus.
+					.contact
+						%ul
+							%li Portfolio
+							%li twitter
+							%li other stuff
+				.small-profile
+					.headshot
+					%h3 Student Name
+					.profile-description
+						%p 
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. In id diam vel augue pharetra ornare eu a magna. Vestibulum quis risus laoreet enim egestas vehicula non quis tellus.
+					.contact
+						%ul
+							%li Portfolio
+							%li twitter
+							%li other stuff
+			/ .profile
+			/ 	.headshot
+			/ 	.contact
+			/ 		%ul
+			/ 			%li Portfolio
+			/ 			%li twitter
+			/ 			%li other stuff
+			/ 	.profile-description
+			/ 		%h2 Student Name
+			/ 		%p
+			/ 			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. In id diam vel augue pharetra ornare eu a magna. Vestibulum quis risus laoreet enim egestas vehicula non quis tellus. In sapien orci, condimentum ac accumsan at, ornare accumsan arcu. Integer et euismod est.
 		%ul.row
 			%li
 			%li

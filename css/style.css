@@ -2,9 +2,9 @@
   box-sizing: border-box; }
 
 body {
-  background: #fdf6e3;
+  background: white;
   text-align: center;
-  width: 90%;
+  max-width: 1000px;
   margin: auto;
   padding-bottom: 200px; }
 
@@ -15,32 +15,62 @@ h1, h2, h3, h4, p, li {
 h3 {
   margin: 0; }
 
+p {
+  font-size: 14px; }
+
 .hyperheader {
   display: block;
   width: 100%;
-  height: 450px;
-  background: gray; }
+  height: 2363px;
+  background: lightgrey;
+  background-image: url("/images/header-bullshit-01.png"); }
+
+#about {
+  display: block;
+  text-align: left;
+  background: lightgrey;
+  padding: 25px; }
+  #about:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0; }
+  #about p {
+    width: 40%;
+    float: left; }
+  #about .about-pic {
+    width: 50%;
+    height: 200px;
+    background: lightgrey;
+    float: right; }
 
 #nav {
   height: 50px;
-  background: gray;
+  background: lightgrey;
   position: relative;
-  z-index: 100; }
-  #nav::after {
+  border-top: 1px solid black;
+  z-index: 10000;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  max-width: 1000px; }
+  #nav:after {
     content: "";
-    display: block;
-    float: right;
-    margin-right: 15px;
-    width: 0;
-    height: 0;
-    border: solid 25px;
-    border-color: transparent transparent #fdf6e3 transparent; }
+    position: absolute;
+    top: -1px;
+    right: -105px;
+    height: 49px;
+    width: 120px;
+    background: lightgrey;
+    border-top: 1px solid black; }
   #nav ul {
     display: block;
     list-style: none;
-    margin: 0;
     position: relative;
-    z-index: 100; }
+    z-index: 100;
+    margin: auto; }
     #nav ul:after {
       content: ".";
       display: block;
@@ -56,39 +86,107 @@ h3 {
       height: 40px;
       border-radius: 6px;
       border: 1px solid transparent;
-      padding: 10px 10px 0; }
+      padding: 10px 10px 0;
+      cursor: pointer; }
+      #nav ul li h1 {
+        margin: 0;
+        position: relative;
+        top: -10px; }
       #nav ul li:hover {
         border: 1px solid #333333; }
-  #nav #people {
-    display: block;
-    position: relative;
-    background: lightgrey;
-    z-index: 1; }
-    #nav #people ul {
-      display: block;
-      position: absolute; }
-      #nav #people ul:after {
-        content: ".";
-        display: block;
-        clear: both;
-        visibility: hidden;
-        line-height: 0;
-        height: 0; }
+        #nav ul li:hover:last-child {
+          border: 1px solid transparent; }
 
-.layout-button {
+#people {
   display: block;
-  height: 40px;
-  width: 75px;
-  padding: 10px;
-  margin: 15px;
-  text-align: center;
-  color: white;
-  border-radius: 6px;
-  border: 1px solid rgba(0, 0, 0, 0.25);
-  background: rgba(0, 0, 0, 0.1);
-  cursor: pointer; }
-  .layout-button p {
-    margin: 0; }
+  position: fixed;
+  background: lightgrey;
+  max-width: 1000px;
+  top: 50px;
+  z-index: 1;
+  overflow: hidden;
+  height: 400px;
+  margin: auto;
+  -webkit-transition: all 0.3s; }
+  #people ul {
+    display: block;
+    list-style: none; }
+    #people ul:after {
+      content: ".";
+      display: block;
+      clear: both;
+      visibility: hidden;
+      line-height: 0;
+      height: 0; }
+    #people ul li {
+      float: left;
+      width: 22%;
+      margin: 5px; }
+  #people.hidden {
+    height: 0; }
+
+.layout {
+  display: block;
+  position: absolute;
+  right: -10%; }
+  .layout:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0; }
+  .layout > p {
+    float: left; }
+  .layout .layout-button {
+    float: left;
+    padding: 0.2em 0.5em 0.3em;
+    text-align: center;
+    border-radius: 6px;
+    border: 1px solid transparent; }
+    .layout .layout-button:hover {
+      border: 1px solid rgba(0, 0, 0, 0.25);
+      background: rgba(0, 0, 0, 0.1);
+      cursor: pointer; }
+
+.class-photo {
+  width: 100%;
+  height: 400px;
+  background: lightgrey;
+  position: relative;
+  background-image: url("/images/class-photo.jpg"); }
+  .class-photo .class-des {
+    position: absolute;
+    left: 25px;
+    top: 25px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.5);
+    width: 300px;
+    text-align: left; }
+    .class-photo .class-des p {
+      margin: 0; }
+
+.categories ul {
+  display: block;
+  list-style: none;
+  margin: 100px 0;
+  padding: 0; }
+  .categories ul:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0; }
+  .categories ul li {
+    text-align: left;
+    width: 30%;
+    margin-right: 5%;
+    padding: 15px;
+    background: lightgrey;
+    float: left; }
+    .categories ul li:last-child {
+      margin-right: 0; }
 
 ul.row {
   display: block;
@@ -107,10 +205,15 @@ ul.row {
     position: relative;
     width: 15%;
     height: 120px;
-    background: grey;
+    background: lightgrey;
     margin-right: 2%;
     float: left;
-    -webkit-transition: all 0.3s; }
+    overflow: hidden;
+    background-size: 150px;
+    background-position: center;
+    -webkit-transition: margin 0.3s;
+    -webkit-transition: padding 0.3s;
+    -webkit-transition: height 0.3s; }
     ul.row li:after {
       content: ".";
       display: block;
@@ -126,40 +229,88 @@ ul.row {
         height: 100px;
         background: lightgrey;
         margin: 10px;
-        float: left; }
+        float: left;
+        -webkit-transition: all 0.3s; }
       ul.row li .wide-info .short-des {
         display: inline-block;
         text-align: left;
         width: 70%;
         margin-top: 10px;
-        float: left; }
+        float: left;
+        -webkit-transition: all 0.3s;
+        pointer-events: none; }
+      ul.row li .wide-info h3 {
+        pointer-events: none; }
     ul.row li:nth-of-type(6n) {
       margin-right: 0; }
       ul.row li:nth-of-type(6n):hover {
         margin-right: -2%; }
     ul.row li:hover {
-      background: lightgrey;
-      width: 19%;
-      margin-left: -2%;
-      margin-right: 0;
       z-index: 1000; }
-      ul.row li:hover .thumb {
-        background: gray; }
     ul.row li:active .detail {
       height: 0; }
   ul.row:active + .detail, ul.row.active + .detail {
-    height: 450px;
+    height: 750px;
     opacity: 1;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.25) inset; }
 
+ul.row li {
+  background-size: 150px;
+  background-position: center; }
+  ul.row li:nth-child(1), ul.row li:nth-child(7n) {
+    background-image: url("/images/1-image1.jpg"); }
+  ul.row li:nth-child(2n) {
+    background-image: url("/images/1-image2.jpg"); }
+  ul.row li:nth-child(3n) {
+    background-image: url("/images/2-image1.jpg"); }
+  ul.row li:nth-child(4n) {
+    background-image: url("/images/2-image2.jpg"); }
+  ul.row li:nth-child(5n) {
+    background-image: url("/images/projectImage1.jpg"); }
+  ul.row li:nth-child(6n) {
+    background-image: url("/images/projectImage2.jpg"); }
+
+ul.row li:hover:nth-child(1), ul.row li:hover:nth-child(7n) {
+  background-image: url("/images/cody.jpg"); }
+ul.row li:hover:nth-child(2n) {
+  background-image: url("/images/mac.jpg"); }
+ul.row li:hover:nth-child(3n) {
+  background-image: url("/images/jared.jpg"); }
+ul.row li:hover:nth-child(4n) {
+  background-image: url("/images/ryan.jpg"); }
+ul.row li:hover:nth-child(5n) {
+  background-image: url("/images/kanye.jpg"); }
+ul.row li:hover:nth-child(6n) {
+  background-image: url("/images/taylor.jpg"); }
+
 ul.row.wide li {
   width: 100%;
-  margin-bottom: 15px; }
+  margin-bottom: 15px;
+  background-image: url(""); }
   ul.row.wide li:hover {
     height: 160px;
-    margin: -20px 0; }
+    margin: 20px 0;
+    padding: 20px 0 0 20px;
+    background-image: url(""); }
+  ul.row.wide li:active, ul.row.wide li.active {
+    height: 635px; }
+    ul.row.wide li:active .wide-info, ul.row.wide li.active .wide-info {
+      position: relative; }
+      ul.row.wide li:active .wide-info .thumb, ul.row.wide li.active .wide-info .thumb {
+        width: 98%;
+        height: 360px;
+        background-image: url("/images/projectImage1.jpg"); }
+      ul.row.wide li:active .wide-info .short-des, ul.row.wide li.active .wide-info .short-des {
+        width: 30%;
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        padding: 15px;
+        background: rgba(255, 255, 255, 0.7); }
   ul.row.wide li .wide-info {
     opacity: 1; }
+    ul.row.wide li .wide-info .thumb {
+      background-image: url("/images/projectImage1.jpg"); }
 
 .detail {
   display: block;
@@ -168,12 +319,14 @@ ul.row.wide li {
   margin: 15px 0;
   width: 100%;
   height: 1px;
-  padding: 0 20px 20px;
+  padding: 30px 30px 20px;
   background: transparent;
   overflow: hidden;
   text-align: left;
   opacity: 0;
   -webkit-transition: all 0.3s; }
+  .detail p {
+    margin-top: 0; }
   .detail:hover {
     background: transparent; }
   .detail.slide .project {
@@ -184,11 +337,13 @@ ul.row.wide li {
     position: absolute;
     height: 100%;
     width: 25px;
+    margin-top: -30px;
     background: lightgrey;
     cursor: pointer;
-    visibility: hidden; }
+    visibility: hidden;
+    z-index: 1000; }
     .detail .prev:hover, .detail .next:hover {
-      background: gray; }
+      background: lightgrey; }
     .detail .prev::after, .detail .next::after {
       content: "";
       display: block;
@@ -216,49 +371,80 @@ ul.row.wide li {
     -webkit-transition: left 0.3s; }
     .detail .project .project-photos {
       display: inline-block;
-      float: left;
-      width: 60%;
+      position: relative;
+      width: 100%;
       height: 360px;
-      background: grey; }
-    .detail .project .prject-description {
-      display: inline-block;
-      width: 35%;
-      margin-left: 20px; }
-      .detail .project .prject-description .quote {
-        font-weight: bold;
-        color: darkgrey;
-        margin-top: 50px; }
-        .detail .project .prject-description .quote::before {
-          content: open-quote;
-          position: relative;
-          font-size: 2em;
-          top: -0.25em;
-          float: left; }
-        .detail .project .prject-description .quote::after {
-          content: close-quote;
-          position: relative;
-          font-size: 2em;
-          top: 0.6em; }
-  .detail .profile {
+      background: lightgrey;
+      background-image: url("/images/projectImage1.jpg"); }
+      .detail .project .project-photos .project-description {
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        padding: 15px;
+        background: rgba(255, 255, 255, 0.7);
+        width: 300px; }
+        .detail .project .project-photos .project-description .quote {
+          font-weight: bold;
+          color: darklightgray;
+          margin-top: 50px; }
+          .detail .project .project-photos .project-description .quote::before {
+            content: open-quote;
+            position: relative;
+            font-size: 2em;
+            top: -0.25em;
+            float: left; }
+          .detail .project .project-photos .project-description .quote::after {
+            content: close-quote;
+            position: relative;
+            font-size: 2em;
+            top: 0.6em; }
+
+.wide-info .small-profile .headshot {
+  margin-left: 10px; }
+
+.small-profile {
+  width: 45%;
+  float: left;
+  margin-top: 30px;
+  margin-right: 4%;
+  text-align: left; }
+  .small-profile .headshot {
+    width: 50px;
+    height: 50px;
+    background: lightgrey;
+    float: left;
+    margin-right: 10px;
+    background-image: url("/images/kanye.jpg");
+    background-size: 100% 100%; }
+  .small-profile h3 {
+    display: inline-block; }
+  .small-profile p {
+    padding-left: 60px; }
+  .small-profile .contact ul {
+    padding-left: 60px; }
+    .small-profile .contact ul li {
+      float: left;
+      width: 30%; }
+  .small-profile .profile {
     position: relative;
     top: -375px;
     left: 110%;
     -webkit-transition: left 0.3s; }
-    .detail .profile .headshot {
+    .small-profile .profile .headshot {
       width: 100%;
       height: 200px;
-      background: gray; }
-    .detail .profile .contact {
+      background: lightgrey; }
+    .small-profile .profile .contact {
       width: 22%;
       display: inline-block;
       float: left;
       margin-top: 55px;
       margin-right: 3%;
-      border-right: 1px solid darkgrey;
+      border-right: 1px solid darklightgray;
       font-family: "Rambla";
       font-weight: 400; }
-      .detail .profile .contact ul {
+      .small-profile .profile .contact ul {
         list-style: circle; }
-    .detail .profile .profile-description {
+    .small-profile .profile .profile-description {
       width: 70%;
       display: inline-block; }
