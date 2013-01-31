@@ -23,7 +23,7 @@ p {
   width: 100%;
   height: 2363px;
   background: lightgrey;
-  background-image: url("/images/header-bullshit-01.png"); }
+  background-image: url("images/header-bullshit-01.png"); }
 
 #about {
   display: block;
