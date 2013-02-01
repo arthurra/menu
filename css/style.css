@@ -23,7 +23,7 @@ p {
   width: 100%;
   height: 2363px;
   background: lightgrey;
-  background-image: url("images/header-bullshit-01.png"); }
+  background-image: url("/images/header-bullshit-01.png"); }
 
 #about {
   display: block;
@@ -55,16 +55,9 @@ p {
   text-align: center;
   position: fixed;
   top: 0;
-  max-width: 1000px; }
-  #nav:after {
-    content: "";
-    position: absolute;
-    top: -1px;
-    right: -105px;
-    height: 49px;
-    width: 120px;
-    background: lightgrey;
-    border-top: 1px solid black; }
+  width: 100%;
+  max-width: 1000px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25); }
   #nav ul {
     display: block;
     list-style: none;
@@ -128,7 +121,7 @@ p {
 .layout {
   display: block;
   position: absolute;
-  right: -10%; }
+  right: 0; }
   .layout:after {
     content: ".";
     display: block;
@@ -160,7 +153,8 @@ p {
     left: 25px;
     top: 25px;
     padding: 15px;
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
     width: 300px;
     text-align: left; }
     .class-photo .class-des p {
@@ -169,7 +163,7 @@ p {
 .categories ul {
   display: block;
   list-style: none;
-  margin: 100px 0;
+  margin: 75px 0;
   padding: 0; }
   .categories ul:after {
     content: ".";
@@ -179,7 +173,7 @@ p {
     line-height: 0;
     height: 0; }
   .categories ul li {
-    text-align: left;
+    text-align: center;
     width: 30%;
     margin-right: 5%;
     padding: 15px;
@@ -187,6 +181,12 @@ p {
     float: left; }
     .categories ul li:last-child {
       margin-right: 0; }
+    .categories ul li i {
+      display: block;
+      margin: auto;
+      font-size: 50px; }
+    .categories ul li p {
+      text-align: left; }
 
 ul.row {
   display: block;
@@ -203,6 +203,7 @@ ul.row {
   ul.row li {
     display: block;
     position: relative;
+    padding: 0.5%;
     width: 15%;
     height: 120px;
     background: lightgrey;
@@ -211,9 +212,7 @@ ul.row {
     overflow: hidden;
     background-size: 150px;
     background-position: center;
-    -webkit-transition: margin 0.3s;
-    -webkit-transition: padding 0.3s;
-    -webkit-transition: height 0.3s; }
+    -webkit-transition: all 0.3s; }
     ul.row li:after {
       content: ".";
       display: block;
@@ -221,6 +220,11 @@ ul.row {
       visibility: hidden;
       line-height: 0;
       height: 0; }
+    ul.row li .thumb {
+      background-image: url("/images/1-image1.jpg");
+      background-size: 100%;
+      height: 99.5%;
+      width: 99.5%; }
     ul.row li .wide-info {
       opacity: 0;
       -webkit-transition: all 0.3s; }
@@ -228,7 +232,7 @@ ul.row {
         width: 15%;
         height: 100px;
         background: lightgrey;
-        margin: 10px;
+        margin: 5px;
         float: left;
         -webkit-transition: all 0.3s; }
       ul.row li .wide-info .short-des {
@@ -247,50 +251,22 @@ ul.row {
         margin-right: -2%; }
     ul.row li:hover {
       z-index: 1000; }
+      ul.row li:hover .thumb {
+        background-image: url("/images/mac.jpg"); }
     ul.row li:active .detail {
       height: 0; }
   ul.row:active + .detail, ul.row.active + .detail {
-    height: 750px;
+    height: 570px;
     opacity: 1;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.25) inset; }
 
-ul.row li {
-  background-size: 150px;
-  background-position: center; }
-  ul.row li:nth-child(1), ul.row li:nth-child(7n) {
-    background-image: url("/images/1-image1.jpg"); }
-  ul.row li:nth-child(2n) {
-    background-image: url("/images/1-image2.jpg"); }
-  ul.row li:nth-child(3n) {
-    background-image: url("/images/2-image1.jpg"); }
-  ul.row li:nth-child(4n) {
-    background-image: url("/images/2-image2.jpg"); }
-  ul.row li:nth-child(5n) {
-    background-image: url("/images/projectImage1.jpg"); }
-  ul.row li:nth-child(6n) {
-    background-image: url("/images/projectImage2.jpg"); }
-
-ul.row li:hover:nth-child(1), ul.row li:hover:nth-child(7n) {
-  background-image: url("/images/cody.jpg"); }
-ul.row li:hover:nth-child(2n) {
-  background-image: url("/images/mac.jpg"); }
-ul.row li:hover:nth-child(3n) {
-  background-image: url("/images/jared.jpg"); }
-ul.row li:hover:nth-child(4n) {
-  background-image: url("/images/ryan.jpg"); }
-ul.row li:hover:nth-child(5n) {
-  background-image: url("/images/kanye.jpg"); }
-ul.row li:hover:nth-child(6n) {
-  background-image: url("/images/taylor.jpg"); }
-
 ul.row.wide li {
   width: 100%;
-  margin-bottom: 15px;
-  background-image: url(""); }
+  margin-bottom: 15px; }
+  ul.row.wide li > .thumb {
+    display: none; }
   ul.row.wide li:hover {
-    height: 160px;
-    margin: 20px 0;
-    padding: 20px 0 0 20px;
+    padding-left: 20px;
     background-image: url(""); }
   ul.row.wide li:active, ul.row.wide li.active {
     height: 635px; }
@@ -320,15 +296,44 @@ ul.row.wide li {
   width: 100%;
   height: 1px;
   padding: 30px 30px 20px;
-  background: transparent;
+  background: rgba(0, 0, 0, 0.05);
   overflow: hidden;
   text-align: left;
   opacity: 0;
   -webkit-transition: all 0.3s; }
+  .detail .student-info {
+    width: 100%;
+    background: lightgrey;
+    padding: 10px;
+    height: 120px;
+    margin-bottom: 30px; }
+    .detail .student-info .headshot {
+      width: 20%;
+      height: 100px;
+      background: gray;
+      background-image: url("/images/mac.jpg");
+      background-position: center;
+      background-size: 100%;
+      float: left;
+      display: inline-block;
+      margin-right: 15px; }
+    .detail .student-info h3 {
+      width: 50%;
+      display: inline-block; }
+    .detail .student-info p {
+      width: 50%;
+      display: inline-block; }
+    .detail .student-info .links {
+      width: 25%;
+      display: inline-block;
+      float: right;
+      list-style: none;
+      margin: 0;
+      border-left: 1px solid gray; }
   .detail p {
     margin-top: 0; }
   .detail:hover {
-    background: transparent; }
+    background: rgba(0, 0, 0, 0.05); }
   .detail.slide .project {
     left: -100%; }
   .detail.slide .profile {
@@ -381,8 +386,9 @@ ul.row.wide li {
         top: 25px;
         left: 25px;
         padding: 15px;
-        background: rgba(255, 255, 255, 0.7);
-        width: 300px; }
+        background: rgba(0, 0, 0, 0.6);
+        width: 300px;
+        color: white; }
         .detail .project .project-photos .project-description .quote {
           font-weight: bold;
           color: darklightgray;

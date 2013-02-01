@@ -1,9 +1,8 @@
 %html
 	%head
 		%link{:href => "css/style.css", :rel => "stylesheet"}
-		%link{:href => "http://netdna.bootstrapcdn.com/font-awesome/2.0/css/font-awesome.css", :rel => "stylesheet"}
+		%link{:href => "http://netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css", :rel => "stylesheet"}
 		%link{:href => "http://fonts.googleapis.com/css?family=Rambla:400,700", :rel => "stylesheet"}
-		%link{:href => "http://netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css"}
 		%script{:src => "http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"}
 		:javascript
 			$(document).ready(function() {
@@ -98,20 +97,24 @@
 		.categories
 			%ul
 				%li
+					%i.icon-file
 					%h4 Print
 					%p
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
 				%li
+					%i.icon-film
 					%h4 Motion
 					%p
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
 				%li
+					%i.icon-tablet
 					%h4 Interactive
 					%p
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
 		%hr
 		%ul.row
 			%li
+				.thumb
 				.wide-info
 					.thumb
 					.short-des
@@ -179,35 +182,21 @@
 			.prev
 			.next
 			.project
-				%h2 Project Title
+				.student-info
+					.headshot
+					%h3 Student Name
+					%p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+					%ul.links
+						%li portfolio
+						%li linkedin
+						%li twitter
 				.project-photos
 					.project-description	
+						%h2 Project Title
 						%p
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. In id diam vel augue pharetra ornare eu a magna. Vestibulum quis risus laoreet enim egestas vehicula non quis tellus. In sapien orci, condimentum ac accumsan at, ornare accumsan arcu. Integer et euismod est.
 						/ %h4.quote
 						/ 	Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-				.small-profile
-					.headshot
-					%h3 Student Name
-					.profile-description
-						%p 
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. In id diam vel augue pharetra ornare eu a magna. Vestibulum quis risus laoreet enim egestas vehicula non quis tellus.
-					.contact
-						%ul
-							%li Portfolio
-							%li twitter
-							%li other stuff
-				.small-profile
-					.headshot
-					%h3 Student Name
-					.profile-description
-						%p 
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. In id diam vel augue pharetra ornare eu a magna. Vestibulum quis risus laoreet enim egestas vehicula non quis tellus.
-					.contact
-						%ul
-							%li Portfolio
-							%li twitter
-							%li other stuff
 			/ .profile
 			/ 	.headshot
 			/ 	.contact
