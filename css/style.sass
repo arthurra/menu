@@ -302,6 +302,8 @@ ul.row
 		background-image: url("/images/taylor.jpg")
 
 ul.row.wide
+	&+.detail
+		display: none
 	li
 		width: 100%
 		margin-bottom: 15px
@@ -318,13 +320,16 @@ ul.row.wide
 				padding-left: 0.5%
 		&:active, &.active
 			height: 560px
+			box-shadow: 0 0 10px rgba(0,0,0,0.25)
 			.wide-info
 				position: relative
 				.thumb
 					width: 99%
 					height: 360px
 					background-image: url("/images/1-image1.jpg")
-					background-position: initial
+					background-position: center
+					&:after
+						display: none
 				.short-des
 					width: 30%
 					position: absolute
@@ -334,7 +339,7 @@ ul.row.wide
 					background: rgba(255,255,255,0.7)
 			.student-info
 				width: 99%
-				background: gray
+				background: white
 				padding: 10px
 				height: 120px
 				margin: 30px 5px 5px
@@ -367,7 +372,7 @@ ul.row.wide
 					li
 						margin-bottom: 5px
 						height: initial
-						background: gray
+						background: white
 						i
 							font-size: 12px
 		.wide-info
@@ -375,10 +380,20 @@ ul.row.wide
 			opacity: 1
 			.thumb
 				background-image: url("/images/1-image1.jpg")
+				background-position: center
 		&:hover
 			.thumb
 				background-image: url("/images/mac.jpg")
 				background-position: center
+				position: relative
+				&:after
+					content: "Mac Clenney"
+					display: block
+					width: 100%
+					background: rgba(0,0,0,0.6)
+					color: white
+					position: absolute
+					bottom: 0
 
 
 .detail
@@ -426,6 +441,9 @@ ul.row.wide
 			border-left: 1px solid gray
 			li
 				margin-bottom: 5px
+				-webkit-transition: padding-left 0.3s
+				&:hover
+					padding-left: 20px
 				i
 					font-size: 12px
 	p

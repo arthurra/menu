@@ -260,6 +260,8 @@ ul.row {
     opacity: 1;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.25) inset; }
 
+ul.row.wide + .detail {
+  display: none; }
 ul.row.wide li {
   width: 100%;
   margin-bottom: 15px; }
@@ -271,14 +273,17 @@ ul.row.wide li {
     ul.row.wide li:hover.active {
       padding-left: 0.5%; }
   ul.row.wide li:active, ul.row.wide li.active {
-    height: 560px; }
+    height: 560px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25); }
     ul.row.wide li:active .wide-info, ul.row.wide li.active .wide-info {
       position: relative; }
       ul.row.wide li:active .wide-info .thumb, ul.row.wide li.active .wide-info .thumb {
         width: 99%;
         height: 360px;
         background-image: url("/images/1-image1.jpg");
-        background-position: initial; }
+        background-position: center; }
+        ul.row.wide li:active .wide-info .thumb:after, ul.row.wide li.active .wide-info .thumb:after {
+          display: none; }
       ul.row.wide li:active .wide-info .short-des, ul.row.wide li.active .wide-info .short-des {
         width: 30%;
         position: absolute;
@@ -288,7 +293,7 @@ ul.row.wide li {
         background: rgba(255, 255, 255, 0.7); }
     ul.row.wide li:active .student-info, ul.row.wide li.active .student-info {
       width: 99%;
-      background: gray;
+      background: white;
       padding: 10px;
       height: 120px;
       margin: 30px 5px 5px;
@@ -319,7 +324,7 @@ ul.row.wide li {
         ul.row.wide li:active .student-info .links li, ul.row.wide li.active .student-info .links li {
           margin-bottom: 5px;
           height: initial;
-          background: gray; }
+          background: white; }
           ul.row.wide li:active .student-info .links li i, ul.row.wide li.active .student-info .links li i {
             font-size: 12px; }
   ul.row.wide li .wide-info {
@@ -333,10 +338,20 @@ ul.row.wide li {
       line-height: 0;
       height: 0; }
     ul.row.wide li .wide-info .thumb {
-      background-image: url("/images/1-image1.jpg"); }
+      background-image: url("/images/1-image1.jpg");
+      background-position: center; }
   ul.row.wide li:hover .thumb {
     background-image: url("/images/mac.jpg");
-    background-position: center; }
+    background-position: center;
+    position: relative; }
+    ul.row.wide li:hover .thumb:after {
+      content: "Mac Clenney";
+      display: block;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      color: white;
+      position: absolute;
+      bottom: 0; }
 
 .detail {
   display: block;
@@ -381,7 +396,10 @@ ul.row.wide li {
       margin: 0;
       border-left: 1px solid gray; }
       .detail .student-info .links li {
-        margin-bottom: 5px; }
+        margin-bottom: 5px;
+        -webkit-transition: padding-left 0.3s; }
+        .detail .student-info .links li:hover {
+          padding-left: 20px; }
         .detail .student-info .links li i {
           font-size: 12px; }
   .detail p {
