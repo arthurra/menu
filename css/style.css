@@ -268,14 +268,17 @@ ul.row.wide li {
   ul.row.wide li:hover {
     padding-left: 20px;
     background-image: url(""); }
+    ul.row.wide li:hover.active {
+      padding-left: 0.5%; }
   ul.row.wide li:active, ul.row.wide li.active {
-    height: 635px; }
+    height: 560px; }
     ul.row.wide li:active .wide-info, ul.row.wide li.active .wide-info {
       position: relative; }
       ul.row.wide li:active .wide-info .thumb, ul.row.wide li.active .wide-info .thumb {
-        width: 98%;
+        width: 99%;
         height: 360px;
-        background-image: url("/images/projectImage1.jpg"); }
+        background-image: url("/images/1-image1.jpg");
+        background-position: initial; }
       ul.row.wide li:active .wide-info .short-des, ul.row.wide li.active .wide-info .short-des {
         width: 30%;
         position: absolute;
@@ -283,10 +286,57 @@ ul.row.wide li {
         left: 30px;
         padding: 15px;
         background: rgba(255, 255, 255, 0.7); }
+    ul.row.wide li:active .student-info, ul.row.wide li.active .student-info {
+      width: 99%;
+      background: gray;
+      padding: 10px;
+      height: 120px;
+      margin: 30px 5px 5px;
+      text-align: left; }
+      ul.row.wide li:active .student-info .headshot, ul.row.wide li.active .student-info .headshot {
+        width: 20%;
+        height: 100px;
+        background: gray;
+        background-image: url("/images/mac.jpg");
+        background-position: center;
+        background-size: 100%;
+        float: left;
+        display: inline-block;
+        margin-right: 15px; }
+      ul.row.wide li:active .student-info h3, ul.row.wide li.active .student-info h3 {
+        width: 50%;
+        display: inline-block; }
+      ul.row.wide li:active .student-info p, ul.row.wide li.active .student-info p {
+        width: 50%;
+        float: left; }
+      ul.row.wide li:active .student-info .links, ul.row.wide li.active .student-info .links {
+        width: 25%;
+        display: inline-block;
+        float: right;
+        list-style: none;
+        margin: 0;
+        border-left: 1px solid darkgrey; }
+        ul.row.wide li:active .student-info .links li, ul.row.wide li.active .student-info .links li {
+          margin-bottom: 5px;
+          height: initial;
+          background: gray; }
+          ul.row.wide li:active .student-info .links li i, ul.row.wide li.active .student-info .links li i {
+            font-size: 12px; }
   ul.row.wide li .wide-info {
+    display: block;
     opacity: 1; }
+    ul.row.wide li .wide-info:after {
+      content: ".";
+      display: block;
+      clear: both;
+      visibility: hidden;
+      line-height: 0;
+      height: 0; }
     ul.row.wide li .wide-info .thumb {
-      background-image: url("/images/projectImage1.jpg"); }
+      background-image: url("/images/1-image1.jpg"); }
+  ul.row.wide li:hover .thumb {
+    background-image: url("/images/mac.jpg");
+    background-position: center; }
 
 .detail {
   display: block;
@@ -306,7 +356,7 @@ ul.row.wide li {
     background: lightgrey;
     padding: 10px;
     height: 120px;
-    margin-bottom: 30px; }
+    margin-top: 30px; }
     .detail .student-info .headshot {
       width: 20%;
       height: 100px;
@@ -330,14 +380,14 @@ ul.row.wide li {
       list-style: none;
       margin: 0;
       border-left: 1px solid gray; }
+      .detail .student-info .links li {
+        margin-bottom: 5px; }
+        .detail .student-info .links li i {
+          font-size: 12px; }
   .detail p {
     margin-top: 0; }
   .detail:hover {
     background: rgba(0, 0, 0, 0.05); }
-  .detail.slide .project {
-    left: -100%; }
-  .detail.slide .profile {
-    left: 0; }
   .detail .prev, .detail .next {
     position: absolute;
     height: 100%;
@@ -380,7 +430,7 @@ ul.row.wide li {
       width: 100%;
       height: 360px;
       background: lightgrey;
-      background-image: url("/images/projectImage1.jpg"); }
+      background-image: url("/images/1-image1.jpg"); }
       .detail .project .project-photos .project-description {
         position: absolute;
         top: 25px;
@@ -404,9 +454,6 @@ ul.row.wide li {
             position: relative;
             font-size: 2em;
             top: 0.6em; }
-
-.wide-info .small-profile .headshot {
-  margin-left: 10px; }
 
 .small-profile {
   width: 45%;
