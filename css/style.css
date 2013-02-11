@@ -9,7 +9,7 @@ body {
   padding-bottom: 200px; }
 
 h1, h2, h3, h4, p, li {
-  font-family: "Rambla";
+  font-family: "Raleway";
   font-weight: 400; }
 
 h3 {
@@ -21,7 +21,7 @@ p {
 .hyperheader {
   display: block;
   width: 100%;
-  height: 2363px;
+  height: 800px;
   background: lightgrey;
   background-image: url("/images/header-bullshit-01.png"); }
 
@@ -47,8 +47,9 @@ p {
     float: right; }
 
 #nav {
-  height: 50px;
-  background: lightgrey;
+  height: 54px;
+  background: #4d4d4d;
+  color: white;
   position: relative;
   border-top: 1px solid black;
   z-index: 10000;
@@ -87,7 +88,7 @@ p {
         top: -10px; }
       #nav ul li:hover {
         border: 1px solid #333333; }
-        #nav ul li:hover:last-child {
+        #nav ul li:hover:last-child, #nav ul li:hover:first-child {
           border: 1px solid transparent; }
 
 #people {
@@ -98,8 +99,10 @@ p {
   top: 50px;
   z-index: 1;
   overflow: hidden;
-  height: 400px;
+  height: 355px;
   margin: auto;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
   -webkit-transition: all 0.3s; }
   #people ul {
     display: block;
@@ -113,8 +116,10 @@ p {
       height: 0; }
     #people ul li {
       float: left;
-      width: 22%;
-      margin: 5px; }
+      width: 18%;
+      margin: 5px;
+      font-size: 14px;
+      text-align: left; }
   #people.hidden {
     height: 0; }
 
@@ -147,7 +152,20 @@ p {
   height: 400px;
   background: lightgrey;
   position: relative;
-  background-image: url("/images/class-photo.jpg"); }
+  background-image: url("/images/class-photo.jpg");
+  background-position: top center;
+  margin-top: 50px;
+  -webkit-transition: background-image 0.3s; }
+  .class-photo:after {
+    content: "";
+    width: 145px;
+    height: 145px;
+    background-image: url("/images/map-corner.png");
+    background-size: 100%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    cursor: pointer; }
   .class-photo .class-des {
     position: absolute;
     left: 25px;
@@ -159,11 +177,16 @@ p {
     text-align: left; }
     .class-photo .class-des p {
       margin: 0; }
+  .class-photo.map {
+    background-image: url("/images/daapmapp.png");
+    background-size: 100%; }
+    .class-photo.map:after {
+      background-image: none; }
 
 .categories ul {
   display: block;
   list-style: none;
-  margin: 75px 0;
+  margin: 35px 0 75px;
   padding: 0; }
   .categories ul:after {
     content: ".";
@@ -187,6 +210,22 @@ p {
       font-size: 50px; }
     .categories ul li p {
       text-align: left; }
+
+ul.row.four li {
+  width: 22%;
+  height: 180px;
+  padding: 0.5%;
+  margin-right: 4%; }
+  ul.row.four li:last-child {
+    margin-right: 0; }
+
+ul.row.five li {
+  width: 18%;
+  height: 135px;
+  padding: 2px;
+  margin-right: 2.5%; }
+  ul.row.five li:last-child {
+    margin-right: 0; }
 
 ul.row {
   display: block;
@@ -224,21 +263,33 @@ ul.row {
       background-image: url("/images/1-image1.jpg");
       background-size: 100%;
       height: 99.5%;
-      width: 99.5%; }
+      width: 99.5%;
+      position: relative; }
+      ul.row li .thumb .project-label, ul.row li .thumb .student-label {
+        position: absolute;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        color: white; }
+      ul.row li .thumb .project-label {
+        top: 0; }
+      ul.row li .thumb .student-label {
+        bottom: 0;
+        display: none; }
     ul.row li .wide-info {
       opacity: 0;
       -webkit-transition: all 0.3s; }
       ul.row li .wide-info .thumb {
-        width: 15%;
-        height: 100px;
+        width: 45%;
+        height: 120px;
         background: lightgrey;
         margin: 5px;
+        margin-right: 15px;
         float: left;
         -webkit-transition: all 0.3s; }
       ul.row li .wide-info .short-des {
         display: inline-block;
         text-align: left;
-        width: 70%;
+        width: 50%;
         margin-top: 10px;
         float: left;
         -webkit-transition: all 0.3s;
@@ -253,10 +304,13 @@ ul.row {
       z-index: 1000; }
       ul.row li:hover .thumb {
         background-image: url("/images/mac.jpg"); }
+        ul.row li:hover .thumb .student-label {
+          display: block; }
     ul.row li:active .detail {
       height: 0; }
   ul.row:active + .detail, ul.row.active + .detail {
     height: 570px;
+    padding: 30px 30px 20px;
     opacity: 1;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.25) inset; }
 
@@ -271,9 +325,10 @@ ul.row.wide li {
     padding-left: 20px;
     background-image: url(""); }
     ul.row.wide li:hover.active {
-      padding-left: 0.5%; }
+      padding: 30px 30px 20px; }
   ul.row.wide li:active, ul.row.wide li.active {
-    height: 560px;
+    height: 585px;
+    padding: 30px 30px 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.25); }
     ul.row.wide li:active .wide-info, ul.row.wide li.active .wide-info {
       position: relative; }
@@ -290,7 +345,8 @@ ul.row.wide li {
         top: 30px;
         left: 30px;
         padding: 15px;
-        background: rgba(255, 255, 255, 0.7); }
+        background: rgba(0, 0, 0, 0.6);
+        color: white; }
     ul.row.wide li:active .student-info, ul.row.wide li.active .student-info {
       width: 99%;
       background: white;
@@ -345,7 +401,7 @@ ul.row.wide li {
     background-position: center;
     position: relative; }
     ul.row.wide li:hover .thumb:after {
-      content: "Mac Clenney";
+      content: "Student Name";
       display: block;
       width: 100%;
       background: rgba(0, 0, 0, 0.6);
@@ -360,7 +416,7 @@ ul.row.wide li {
   margin: 15px 0;
   width: 100%;
   height: 1px;
-  padding: 30px 30px 20px;
+  padding: 0px 30px 0px;
   background: rgba(0, 0, 0, 0.05);
   overflow: hidden;
   text-align: left;
@@ -451,11 +507,10 @@ ul.row.wide li {
       background-image: url("/images/1-image1.jpg"); }
       .detail .project .project-photos .project-description {
         position: absolute;
-        top: 25px;
-        left: 25px;
         padding: 15px;
         background: rgba(0, 0, 0, 0.6);
-        width: 300px;
+        width: 33%;
+        height: 100%;
         color: white; }
         .detail .project .project-photos .project-description .quote {
           font-weight: bold;

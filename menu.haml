@@ -3,6 +3,7 @@
 		%link{:href => "css/style.css", :rel => "stylesheet"}
 		%link{:href => "http://netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css", :rel => "stylesheet"}
 		%link{:href => "http://fonts.googleapis.com/css?family=Rambla:400,700", :rel => "stylesheet"}
+		%link{:href => "http://fonts.googleapis.com/css?family=Raleway:500", :rel => "stylesheet"}
 		%script{:src => "http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"}
 		:javascript
 			$(document).ready(function() {
@@ -21,8 +22,12 @@
 				$("ul.row li").click(function () {
 					$(this).toggleClass("active");
 				});
+
+				$("#map").click(function () {
+					$(this).toggleClass("map");
+				});
 			});
-			window.onload = window.location.hash = 'nav';
+			window.onload = window.location.hash = 'map';
 	%body
 		.hyperheader
 		#nav
@@ -41,51 +46,83 @@
 							%i.icon-th
 		#people.hidden
 			%ul
-				%li Student Name
-				%li Student Name
-				%li Student Name
-				%li Student Name
-				%li Student Name
-				%li Student Name
-				%li Student Name
-				%li Student Name
-				%li Student Name
-				%li Student Name
-				%li Student Name
-				%li Student Name
-				%li Student Name
-				%li Student Name
-				%li Student Name
-				%li Student Name
-				%li Student Name
-				%li Student Name
-				%li Student Name
-				%li Student Name
-				%li Student Name
-				%li Student Name
-				%li Student Name
-				%li Student Name
-				%li Student Name
-				%li Student Name
-				%li Student Name
-				%li Student Name
-				%li Student Name
-				%li Student Name
-				%li Student Name
-				%li Student Name
-				%li Student Name
-				%li Student Name
-				%li Student Name
-				%li Student Name
-				%li Student Name
-				%li Student Name
-				%li Student Name
-				%li Student Name
+				%li Latifa
+				%li Shaniqua
+				%li Latoya
+				%li Laquisha
+				%li La'Kisha
+				%li La'Tanya
+				%li Rohondra
+				%li Bonquisha
+				%li Sha'Tanya
+				%li Toprameneesha
+				%li La'Quishria
+				%li Bonifa
+				%li Shataniana
+				%li Levondia
+				%li Bufanaquishria
+				%li La'Quishraniqua
+				%li Barbeesha
+				%li Mo'Nique
+				%li Abduiniana
+				%li Fo'Landra
+				%li Kisha
+				%li Bon'Qui qui
+				%li V'Lanta'La'Mana
+				%li Sha Nay Nay
+				%li Tay Tay
+				%li Da'Quonde
+				%li La'Trice
+				%li Deedra
+				%li Tramicia
+				%li De'Lanice
+				%li Ka'Likatirfrian
+				%li Sha'Londria
+				%li Sha'Quonda
+				%li Elaphantisha
+				%li La'Quaysha
+				%li Guuuuuuurl
+				%li Qua'Lifriaqui
+				%li Cornbreesha
+				%li Congratulla
+				%li Barakisha
+				%li Obamaniqua
+				%li Koolaidria
+				%li Spongeshia
+				%li Clitorisandrea
+				%li Fa'Nay Nay
+				%li Comtonia
+				%li Harlemisha
+				%li Beethovenice
+				%li Watermelondrea
+				%li cellularphoniqua
+				%li Unidakaliqua
+				%li Alejandrisha
+				%li Quisha
+				%li fri'chikenisha
+				%li Colla'greeniqua
+				%li Grapedrankisha
+				%li Africanishaniqua
+				%li Que'Shayda
+				%li La'Taniana
+				%li Courtney
 		%br
-		.class-photo
+		.class-photo#map
 			.class-des
 				%p
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+					Our aim is to show you how we restructure the reality you anticipate on your screen. Come and view, explore and even play with our senior projects, and find your own interpretation of digital reality.
+				%br
+				%p 
+					The exhibition is FREE and open to the public on the following dates and times:
+				%br
+				%p 
+					%b Exhibition Opening:
+				%p Tuesday, June 5, 5pm–9pm
+				%br
+				%p
+					%b Exhibition:
+				%p June 6–8, 9am–9pm
+				%p June 9, 10am–12pm
 		.categories
 			%ul
 				%li
@@ -103,10 +140,11 @@
 					%h4 Interactive
 					%p
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
-		%hr
-		%ul.row
+		%ul.row.five
 			%li
 				.thumb
+					.student-label
+						Student Name
 				.wide-info
 					.thumb
 					.short-des
@@ -129,6 +167,8 @@
 							other stuff
 			%li
 				.thumb
+					.student-label
+						Student Name
 				.wide-info
 					.thumb
 					.short-des
@@ -151,6 +191,8 @@
 							other stuff
 			%li
 				.thumb
+					.student-label
+						Student Name
 				.wide-info
 					.thumb
 					.short-des
@@ -173,6 +215,8 @@
 							other stuff
 			%li
 				.thumb
+					.student-label
+						Student Name
 				.wide-info
 					.thumb
 					.short-des
@@ -195,6 +239,58 @@
 							other stuff
 			%li
 				.thumb
+					.student-label
+						Student Name
+				.wide-info
+					.thumb
+					.short-des
+						%h3 Project Title
+						%p
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. 
+				.student-info
+					.headshot
+					%h3 Student Name
+					%p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+					%ul.links
+						%li 
+							%i.icon-book
+							portfolio
+						%li 
+							%i.icon-twitter
+							twitter
+						%li 
+							%i.icon-group
+							other stuff
+		%span.detail
+			.prev
+			.next
+			.project
+				
+				.project-photos
+					.project-description	
+						%h2 Project Title
+						%p
+							The wayfinding in DAAP has been stated to be flawed. Some of the problem areas include corners, where multiple signs are posted, unlabeled entrances, the naming of staircases, elevators, and areas of DAAP, and the directories that are placed at entrances. Overall, the wayfinding fails to direct newcomers or long-time students to necessary locations such as faculty offices, school offices, the CGC, the cafe, the photo lab, the woodshop, and the DAAPstore. 
+				.student-info
+					.headshot
+					%h3 Student Name
+					%p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+					%ul.links
+						%li 
+							%i.icon-book
+							portfolio
+						%li 
+							%i.icon-twitter
+							twitter
+						%li 
+							%i.icon-group
+							other stuff
+		%ul.row.five
+			
+			%li
+				.thumb
+					.student-label
+						Student Name
 				.wide-info
 					.thumb
 					.short-des
@@ -217,6 +313,226 @@
 							other stuff
 			%li
 				.thumb
+					.student-label
+						Student Name
+				.wide-info
+					.thumb
+					.short-des
+						%h3 Project Title
+						%p
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. 
+				.student-info
+					.headshot
+					%h3 Student Name
+					%p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+					%ul.links
+						%li 
+							%i.icon-book
+							portfolio
+						%li 
+							%i.icon-twitter
+							twitter
+						%li 
+							%i.icon-group
+							other stuff
+			%li
+				.thumb
+					.student-label
+						Student Name
+				.wide-info
+					.thumb
+					.short-des
+						%h3 Project Title
+						%p
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. 
+				.student-info
+					.headshot
+					%h3 Student Name
+					%p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+					%ul.links
+						%li 
+							%i.icon-book
+							portfolio
+						%li 
+							%i.icon-twitter
+							twitter
+						%li 
+							%i.icon-group
+							other stuff
+			%li
+				.thumb
+					.student-label
+						Student Name
+				.wide-info
+					.thumb
+					.short-des
+						%h3 Project Title
+						%p
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. 
+				.student-info
+					.headshot
+					%h3 Student Name
+					%p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+					%ul.links
+						%li 
+							%i.icon-book
+							portfolio
+						%li 
+							%i.icon-twitter
+							twitter
+						%li 
+							%i.icon-group
+							other stuff
+			%li
+				.thumb
+					.student-label
+						Student Name
+				.wide-info
+					.thumb
+					.short-des
+						%h3 Project Title
+						%p
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. 
+				.student-info
+					.headshot
+					%h3 Student Name
+					%p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+					%ul.links
+						%li 
+							%i.icon-book
+							portfolio
+						%li 
+							%i.icon-twitter
+							twitter
+						%li 
+							%i.icon-group
+							other stuff
+		%span.detail
+			.prev
+			.next
+			.project
+				
+				.project-photos
+					.project-description	
+						%h2 Project Title
+						%p
+							The wayfinding in DAAP has been stated to be flawed. Some of the problem areas include corners, where multiple signs are posted, unlabeled entrances, the naming of staircases, elevators, and areas of DAAP, and the directories that are placed at entrances. Overall, the wayfinding fails to direct newcomers or long-time students to necessary locations such as faculty offices, school offices, the CGC, the cafe, the photo lab, the woodshop, and the DAAPstore. 
+				.student-info
+					.headshot
+					%h3 Student Name
+					%p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+					%ul.links
+						%li 
+							%i.icon-book
+							portfolio
+						%li 
+							%i.icon-twitter
+							twitter
+						%li 
+							%i.icon-group
+							other stuff
+		%ul.row.five
+			
+			%li
+				.thumb
+					.student-label
+						Student Name
+				.wide-info
+					.thumb
+					.short-des
+						%h3 Project Title
+						%p
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. 
+				.student-info
+					.headshot
+					%h3 Student Name
+					%p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+					%ul.links
+						%li 
+							%i.icon-book
+							portfolio
+						%li 
+							%i.icon-twitter
+							twitter
+						%li 
+							%i.icon-group
+							other stuff
+			%li
+				.thumb
+					.student-label
+						Student Name
+				.wide-info
+					.thumb
+					.short-des
+						%h3 Project Title
+						%p
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. 
+				.student-info
+					.headshot
+					%h3 Student Name
+					%p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+					%ul.links
+						%li 
+							%i.icon-book
+							portfolio
+						%li 
+							%i.icon-twitter
+							twitter
+						%li 
+							%i.icon-group
+							other stuff
+			%li
+				.thumb
+					.student-label
+						Student Name
+				.wide-info
+					.thumb
+					.short-des
+						%h3 Project Title
+						%p
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. 
+				.student-info
+					.headshot
+					%h3 Student Name
+					%p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+					%ul.links
+						%li 
+							%i.icon-book
+							portfolio
+						%li 
+							%i.icon-twitter
+							twitter
+						%li 
+							%i.icon-group
+							other stuff
+			%li
+				.thumb
+					.student-label
+						Student Name
+				.wide-info
+					.thumb
+					.short-des
+						%h3 Project Title
+						%p
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. 
+				.student-info
+					.headshot
+					%h3 Student Name
+					%p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+					%ul.links
+						%li 
+							%i.icon-book
+							portfolio
+						%li 
+							%i.icon-twitter
+							twitter
+						%li 
+							%i.icon-group
+							other stuff
+			%li
+				.thumb
+					.student-label
+						Student Name
 				.wide-info
 					.thumb
 					.short-des
@@ -261,8 +577,7 @@
 						%li 
 							%i.icon-group
 							other stuff
-		%ul.row
-			%li
+		%ul.row.five
 			%li
 			%li
 			%li
@@ -278,32 +593,28 @@
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. In id diam vel augue pharetra ornare eu a magna. Vestibulum quis risus laoreet enim egestas vehicula non quis tellus. In sapien orci, condimentum ac accumsan at, ornare accumsan arcu. Integer et euismod est.
 					%h4.quote
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-		%ul.row
-			%li
-			%li
-			%li
-			%li
-			%li
-			%li
-		%span.detail
-		%ul.row
-			%li
+		%ul.row.five
 			%li
 			%li
 			%li
 			%li
 			%li
 		%span.detail
-		%ul.row
-			%li
+		%ul.row.five
 			%li
 			%li
 			%li
 			%li
 			%li
 		%span.detail
-		%ul.row
+		%ul.row.five
 			%li
+			%li
+			%li
+			%li
+			%li
+		%span.detail
+		%ul.row.five
 			%li
 			%li
 			%li
