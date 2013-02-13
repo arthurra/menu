@@ -26,24 +26,43 @@
 				$("#map").click(function () {
 					$(this).toggleClass("map");
 				});
+
+				$("#print").click(function () {
+					$("li.motion").toggleClass("filter");
+					$("li.interactive").toggleClass("filter");
+				});
+
+				$("#motion").click(function () {
+					$("li.print").toggleClass("filter");
+					$("li.interactive").toggleClass("filter");
+				});
+
+				$("#interactive").click(function () {
+					$("li.motion").toggleClass("filter");
+					$("li.print").toggleClass("filter");
+				});
+
+				$("#all").click(function () {
+					$("li").removeClass("filter");
+				});
+
+				$("div .project-photos").click(function () {
+					$(this).toggleClass("active");
+				});
 			});
 			window.onload = window.location.hash = 'map';
 	%body
 		.hyperheader
+			%img{:src => "images/header-bullshit-03.png"}
+		.dude-guy
 		#nav
 			%ul
 				%li
 					%h1 GRCD 2013
-				%li print
-				%li motion
-				%li interactive
+				%li projects
+				%li about
+				%li map
 				%li#people-link people
-				%li
-					.layout
-						.layout-button
-							%i.icon-reorder
-						.layout-button
-							%i.icon-th
 		#people.hidden
 			%ul
 				%li Latifa
@@ -140,8 +159,22 @@
 					%h4 Interactive
 					%p
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+		.subnav
+			%ul
+				%li view:
+				%li#all all
+				%li#print print
+				%li#motion motion
+				%li#interactive interactive
+				%li
+					.layout
+						.layout-button
+							%i.icon-reorder
+						.layout-button
+							%i.icon-th
+
 		%ul.row.five
-			%li
+			%li.print
 				.thumb
 					.student-label
 						Student Name
@@ -165,7 +198,7 @@
 						%li 
 							%i.icon-group
 							other stuff
-			%li
+			%li.interactive
 				.thumb
 					.student-label
 						Student Name
@@ -189,7 +222,7 @@
 						%li 
 							%i.icon-group
 							other stuff
-			%li
+			%li.print
 				.thumb
 					.student-label
 						Student Name
@@ -213,7 +246,7 @@
 						%li 
 							%i.icon-group
 							other stuff
-			%li
+			%li.motion
 				.thumb
 					.student-label
 						Student Name
@@ -237,7 +270,162 @@
 						%li 
 							%i.icon-group
 							other stuff
-			%li
+			%li.interactive
+				.thumb
+					.student-label
+						Student Name
+				.wide-info
+					.thumb
+					.short-des
+						%h3 Project Title
+						%p
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. 
+				.student-info
+					.headshot
+					%h3 Student Name
+					%p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+					%ul.links
+						%li 
+							%i.icon-book
+							portfolio
+						%li 
+							%i.icon-twitter
+							twitter
+						%li 
+							%i.icon-group
+							other stuff
+		%span.detail
+			.prev
+			.next
+			.project
+				%h2 Project Title
+				.project-photos
+					%ul
+						%li
+							%img{:src => "/images/1-image1.jpg"}
+						%li
+							%img{:src => "/images/1-image2.jpg"}
+					.prev
+						.left-arrow
+					.next
+						.right-arrow
+					.project-description	
+						
+						%p
+							The wayfinding in DAAP has been stated to be flawed. Some of the problem areas include corners, where multiple signs are posted, unlabeled entrances, the naming of staircases, elevators, and areas of DAAP, and the directories that are placed at entrances. Overall, the wayfinding fails to direct newcomers or long-time students to necessary locations such as faculty offices, school offices, the CGC, the cafe, the photo lab, the woodshop, and the DAAPstore. 
+				.student-info
+					.headshot
+					%h3 Student Name
+					%p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+					%ul.links
+						%li 
+							%i.icon-book
+							portfolio
+						%li 
+							%i.icon-twitter
+							twitter
+						%li 
+							%i.icon-group
+							other stuff
+		%ul.row.five
+			
+			%li.motion
+				.thumb
+					.student-label
+						Student Name
+				.wide-info
+					.thumb
+					.short-des
+						%h3 Project Title
+						%p
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. 
+				.student-info
+					.headshot
+					%h3 Student Name
+					%p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+					%ul.links
+						%li 
+							%i.icon-book
+							portfolio
+						%li 
+							%i.icon-twitter
+							twitter
+						%li 
+							%i.icon-group
+							other stuff
+			%li.print
+				.thumb
+					.student-label
+						Student Name
+				.wide-info
+					.thumb
+					.short-des
+						%h3 Project Title
+						%p
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. 
+				.student-info
+					.headshot
+					%h3 Student Name
+					%p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+					%ul.links
+						%li 
+							%i.icon-book
+							portfolio
+						%li 
+							%i.icon-twitter
+							twitter
+						%li 
+							%i.icon-group
+							other stuff
+			%li.print
+				.thumb
+					.student-label
+						Student Name
+				.wide-info
+					.thumb
+					.short-des
+						%h3 Project Title
+						%p
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. 
+				.student-info
+					.headshot
+					%h3 Student Name
+					%p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+					%ul.links
+						%li 
+							%i.icon-book
+							portfolio
+						%li 
+							%i.icon-twitter
+							twitter
+						%li 
+							%i.icon-group
+							other stuff
+			%li.motion
+				.thumb
+					.student-label
+						Student Name
+				.wide-info
+					.thumb
+					.short-des
+						%h3 Project Title
+						%p
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. 
+				.student-info
+					.headshot
+					%h3 Student Name
+					%p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+					%ul.links
+						%li 
+							%i.icon-book
+							portfolio
+						%li 
+							%i.icon-twitter
+							twitter
+						%li 
+							%i.icon-group
+							other stuff
+			%li.interactive
 				.thumb
 					.student-label
 						Student Name
@@ -287,7 +475,7 @@
 							other stuff
 		%ul.row.five
 			
-			%li
+			%li.interactive
 				.thumb
 					.student-label
 						Student Name
@@ -311,7 +499,7 @@
 						%li 
 							%i.icon-group
 							other stuff
-			%li
+			%li.print
 				.thumb
 					.student-label
 						Student Name
@@ -335,7 +523,7 @@
 						%li 
 							%i.icon-group
 							other stuff
-			%li
+			%li.motion
 				.thumb
 					.student-label
 						Student Name
@@ -359,7 +547,7 @@
 						%li 
 							%i.icon-group
 							other stuff
-			%li
+			%li.print
 				.thumb
 					.student-label
 						Student Name
@@ -383,153 +571,7 @@
 						%li 
 							%i.icon-group
 							other stuff
-			%li
-				.thumb
-					.student-label
-						Student Name
-				.wide-info
-					.thumb
-					.short-des
-						%h3 Project Title
-						%p
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. 
-				.student-info
-					.headshot
-					%h3 Student Name
-					%p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
-					%ul.links
-						%li 
-							%i.icon-book
-							portfolio
-						%li 
-							%i.icon-twitter
-							twitter
-						%li 
-							%i.icon-group
-							other stuff
-		%span.detail
-			.prev
-			.next
-			.project
-				
-				.project-photos
-					.project-description	
-						%h2 Project Title
-						%p
-							The wayfinding in DAAP has been stated to be flawed. Some of the problem areas include corners, where multiple signs are posted, unlabeled entrances, the naming of staircases, elevators, and areas of DAAP, and the directories that are placed at entrances. Overall, the wayfinding fails to direct newcomers or long-time students to necessary locations such as faculty offices, school offices, the CGC, the cafe, the photo lab, the woodshop, and the DAAPstore. 
-				.student-info
-					.headshot
-					%h3 Student Name
-					%p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
-					%ul.links
-						%li 
-							%i.icon-book
-							portfolio
-						%li 
-							%i.icon-twitter
-							twitter
-						%li 
-							%i.icon-group
-							other stuff
-		%ul.row.five
-			
-			%li
-				.thumb
-					.student-label
-						Student Name
-				.wide-info
-					.thumb
-					.short-des
-						%h3 Project Title
-						%p
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. 
-				.student-info
-					.headshot
-					%h3 Student Name
-					%p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
-					%ul.links
-						%li 
-							%i.icon-book
-							portfolio
-						%li 
-							%i.icon-twitter
-							twitter
-						%li 
-							%i.icon-group
-							other stuff
-			%li
-				.thumb
-					.student-label
-						Student Name
-				.wide-info
-					.thumb
-					.short-des
-						%h3 Project Title
-						%p
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. 
-				.student-info
-					.headshot
-					%h3 Student Name
-					%p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
-					%ul.links
-						%li 
-							%i.icon-book
-							portfolio
-						%li 
-							%i.icon-twitter
-							twitter
-						%li 
-							%i.icon-group
-							other stuff
-			%li
-				.thumb
-					.student-label
-						Student Name
-				.wide-info
-					.thumb
-					.short-des
-						%h3 Project Title
-						%p
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. 
-				.student-info
-					.headshot
-					%h3 Student Name
-					%p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
-					%ul.links
-						%li 
-							%i.icon-book
-							portfolio
-						%li 
-							%i.icon-twitter
-							twitter
-						%li 
-							%i.icon-group
-							other stuff
-			%li
-				.thumb
-					.student-label
-						Student Name
-				.wide-info
-					.thumb
-					.short-des
-						%h3 Project Title
-						%p
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. 
-				.student-info
-					.headshot
-					%h3 Student Name
-					%p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
-					%ul.links
-						%li 
-							%i.icon-book
-							portfolio
-						%li 
-							%i.icon-twitter
-							twitter
-						%li 
-							%i.icon-group
-							other stuff
-			%li
+			%li.motion
 				.thumb
 					.student-label
 						Student Name
@@ -578,46 +620,728 @@
 							%i.icon-group
 							other stuff
 		%ul.row.five
-			%li
-			%li
-			%li
-			%li
-			%li
+			
+			%li.interactive
+				.thumb
+					.student-label
+						Student Name
+				.wide-info
+					.thumb
+					.short-des
+						%h3 Project Title
+						%p
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. 
+				.student-info
+					.headshot
+					%h3 Student Name
+					%p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+					%ul.links
+						%li 
+							%i.icon-book
+							portfolio
+						%li 
+							%i.icon-twitter
+							twitter
+						%li 
+							%i.icon-group
+							other stuff
+			%li.interactive
+				.thumb
+					.student-label
+						Student Name
+				.wide-info
+					.thumb
+					.short-des
+						%h3 Project Title
+						%p
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. 
+				.student-info
+					.headshot
+					%h3 Student Name
+					%p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+					%ul.links
+						%li 
+							%i.icon-book
+							portfolio
+						%li 
+							%i.icon-twitter
+							twitter
+						%li 
+							%i.icon-group
+							other stuff
+			%li.print
+				.thumb
+					.student-label
+						Student Name
+				.wide-info
+					.thumb
+					.short-des
+						%h3 Project Title
+						%p
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. 
+				.student-info
+					.headshot
+					%h3 Student Name
+					%p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+					%ul.links
+						%li 
+							%i.icon-book
+							portfolio
+						%li 
+							%i.icon-twitter
+							twitter
+						%li 
+							%i.icon-group
+							other stuff
+			%li.motion
+				.thumb
+					.student-label
+						Student Name
+				.wide-info
+					.thumb
+					.short-des
+						%h3 Project Title
+						%p
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. 
+				.student-info
+					.headshot
+					%h3 Student Name
+					%p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+					%ul.links
+						%li 
+							%i.icon-book
+							portfolio
+						%li 
+							%i.icon-twitter
+							twitter
+						%li 
+							%i.icon-group
+							other stuff
+			%li.print
+				.thumb
+					.student-label
+						Student Name
+				.wide-info
+					.thumb
+					.short-des
+						%h3 Project Title
+						%p
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. 
+				.student-info
+					.headshot
+					%h3 Student Name
+					%p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+					%ul.links
+						%li 
+							%i.icon-book
+							portfolio
+						%li 
+							%i.icon-twitter
+							twitter
+						%li 
+							%i.icon-group
+							other stuff
 		%span.detail
+			.prev
+			.next
 			.project
-				%h2 Project Title
+				
 				.project-photos
-				.prject-description	
-					%h3 Project Description
-					%p
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. In id diam vel augue pharetra ornare eu a magna. Vestibulum quis risus laoreet enim egestas vehicula non quis tellus. In sapien orci, condimentum ac accumsan at, ornare accumsan arcu. Integer et euismod est.
-					%h4.quote
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+					.project-description	
+						%h2 Project Title
+						%p
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. In id diam vel augue pharetra ornare eu a magna. Vestibulum quis risus laoreet enim egestas vehicula non quis tellus. In sapien orci, condimentum ac accumsan at, ornare accumsan arcu. Integer et euismod est.
+				.student-info
+					.headshot
+					%h3 Student Name
+					%p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+					%ul.links
+						%li 
+							%i.icon-book
+							portfolio
+						%li 
+							%i.icon-twitter
+							twitter
+						%li 
+							%i.icon-group
+							other stuff
 		%ul.row.five
-			%li
-			%li
-			%li
-			%li
-			%li
+			%li.motion
+				.thumb
+					.student-label
+						Student Name
+				.wide-info
+					.thumb
+					.short-des
+						%h3 Project Title
+						%p
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. 
+				.student-info
+					.headshot
+					%h3 Student Name
+					%p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+					%ul.links
+						%li 
+							%i.icon-book
+							portfolio
+						%li 
+							%i.icon-twitter
+							twitter
+						%li 
+							%i.icon-group
+							other stuff
+			%li.interactive
+				.thumb
+					.student-label
+						Student Name
+				.wide-info
+					.thumb
+					.short-des
+						%h3 Project Title
+						%p
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. 
+				.student-info
+					.headshot
+					%h3 Student Name
+					%p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+					%ul.links
+						%li 
+							%i.icon-book
+							portfolio
+						%li 
+							%i.icon-twitter
+							twitter
+						%li 
+							%i.icon-group
+							other stuff
+			%li.motion
+				.thumb
+					.student-label
+						Student Name
+				.wide-info
+					.thumb
+					.short-des
+						%h3 Project Title
+						%p
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. 
+				.student-info
+					.headshot
+					%h3 Student Name
+					%p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+					%ul.links
+						%li 
+							%i.icon-book
+							portfolio
+						%li 
+							%i.icon-twitter
+							twitter
+						%li 
+							%i.icon-group
+							other stuff
+			%li.print
+				.thumb
+					.student-label
+						Student Name
+				.wide-info
+					.thumb
+					.short-des
+						%h3 Project Title
+						%p
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. 
+				.student-info
+					.headshot
+					%h3 Student Name
+					%p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+					%ul.links
+						%li 
+							%i.icon-book
+							portfolio
+						%li 
+							%i.icon-twitter
+							twitter
+						%li 
+							%i.icon-group
+							other stuff
+			%li.print
+				.thumb
+					.student-label
+						Student Name
+				.wide-info
+					.thumb
+					.short-des
+						%h3 Project Title
+						%p
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. 
+				.student-info
+					.headshot
+					%h3 Student Name
+					%p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+					%ul.links
+						%li 
+							%i.icon-book
+							portfolio
+						%li 
+							%i.icon-twitter
+							twitter
+						%li 
+							%i.icon-group
+							other stuff
 		%span.detail
+			.prev
+			.next
+			.project
+				
+				.project-photos
+					.project-description	
+						%h2 Project Title
+						%p
+							The wayfinding in DAAP has been stated to be flawed. Some of the problem areas include corners, where multiple signs are posted, unlabeled entrances, the naming of staircases, elevators, and areas of DAAP, and the directories that are placed at entrances. Overall, the wayfinding fails to direct newcomers or long-time students to necessary locations such as faculty offices, school offices, the CGC, the cafe, the photo lab, the woodshop, and the DAAPstore. 
+				.student-info
+					.headshot
+					%h3 Student Name
+					%p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+					%ul.links
+						%li 
+							%i.icon-book
+							portfolio
+						%li 
+							%i.icon-twitter
+							twitter
+						%li 
+							%i.icon-group
+							other stuff
 		%ul.row.five
-			%li
-			%li
-			%li
-			%li
-			%li
+			%li.interactive
+				.thumb
+					.student-label
+						Student Name
+				.wide-info
+					.thumb
+					.short-des
+						%h3 Project Title
+						%p
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. 
+				.student-info
+					.headshot
+					%h3 Student Name
+					%p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+					%ul.links
+						%li 
+							%i.icon-book
+							portfolio
+						%li 
+							%i.icon-twitter
+							twitter
+						%li 
+							%i.icon-group
+							other stuff
+			%li.interactive
+				.thumb
+					.student-label
+						Student Name
+				.wide-info
+					.thumb
+					.short-des
+						%h3 Project Title
+						%p
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. 
+				.student-info
+					.headshot
+					%h3 Student Name
+					%p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+					%ul.links
+						%li 
+							%i.icon-book
+							portfolio
+						%li 
+							%i.icon-twitter
+							twitter
+						%li 
+							%i.icon-group
+							other stuff
+			%li.motion
+				.thumb
+					.student-label
+						Student Name
+				.wide-info
+					.thumb
+					.short-des
+						%h3 Project Title
+						%p
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. 
+				.student-info
+					.headshot
+					%h3 Student Name
+					%p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+					%ul.links
+						%li 
+							%i.icon-book
+							portfolio
+						%li 
+							%i.icon-twitter
+							twitter
+						%li 
+							%i.icon-group
+							other stuff
+			%li.print
+				.thumb
+					.student-label
+						Student Name
+				.wide-info
+					.thumb
+					.short-des
+						%h3 Project Title
+						%p
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. 
+				.student-info
+					.headshot
+					%h3 Student Name
+					%p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+					%ul.links
+						%li 
+							%i.icon-book
+							portfolio
+						%li 
+							%i.icon-twitter
+							twitter
+						%li 
+							%i.icon-group
+							other stuff
+			%li.print
+				.thumb
+					.student-label
+						Student Name
+				.wide-info
+					.thumb
+					.short-des
+						%h3 Project Title
+						%p
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. 
+				.student-info
+					.headshot
+					%h3 Student Name
+					%p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+					%ul.links
+						%li 
+							%i.icon-book
+							portfolio
+						%li 
+							%i.icon-twitter
+							twitter
+						%li 
+							%i.icon-group
+							other stuff
 		%span.detail
+			.prev
+			.next
+			.project
+				
+				.project-photos
+					.project-description	
+						%h2 Project Title
+						%p
+							The wayfinding in DAAP has been stated to be flawed. Some of the problem areas include corners, where multiple signs are posted, unlabeled entrances, the naming of staircases, elevators, and areas of DAAP, and the directories that are placed at entrances. Overall, the wayfinding fails to direct newcomers or long-time students to necessary locations such as faculty offices, school offices, the CGC, the cafe, the photo lab, the woodshop, and the DAAPstore. 
+				.student-info
+					.headshot
+					%h3 Student Name
+					%p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+					%ul.links
+						%li 
+							%i.icon-book
+							portfolio
+						%li 
+							%i.icon-twitter
+							twitter
+						%li 
+							%i.icon-group
+							other stuff
 		%ul.row.five
-			%li
-			%li
-			%li
-			%li
-			%li
+			%li.motion
+				.thumb
+					.student-label
+						Student Name
+				.wide-info
+					.thumb
+					.short-des
+						%h3 Project Title
+						%p
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. 
+				.student-info
+					.headshot
+					%h3 Student Name
+					%p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+					%ul.links
+						%li 
+							%i.icon-book
+							portfolio
+						%li 
+							%i.icon-twitter
+							twitter
+						%li 
+							%i.icon-group
+							other stuff
+			%li.interactive
+				.thumb
+					.student-label
+						Student Name
+				.wide-info
+					.thumb
+					.short-des
+						%h3 Project Title
+						%p
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. 
+				.student-info
+					.headshot
+					%h3 Student Name
+					%p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+					%ul.links
+						%li 
+							%i.icon-book
+							portfolio
+						%li 
+							%i.icon-twitter
+							twitter
+						%li 
+							%i.icon-group
+							other stuff
+			%li.interactive
+				.thumb
+					.student-label
+						Student Name
+				.wide-info
+					.thumb
+					.short-des
+						%h3 Project Title
+						%p
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. 
+				.student-info
+					.headshot
+					%h3 Student Name
+					%p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+					%ul.links
+						%li 
+							%i.icon-book
+							portfolio
+						%li 
+							%i.icon-twitter
+							twitter
+						%li 
+							%i.icon-group
+							other stuff
+			%li.print
+				.thumb
+					.student-label
+						Student Name
+				.wide-info
+					.thumb
+					.short-des
+						%h3 Project Title
+						%p
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. 
+				.student-info
+					.headshot
+					%h3 Student Name
+					%p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+					%ul.links
+						%li 
+							%i.icon-book
+							portfolio
+						%li 
+							%i.icon-twitter
+							twitter
+						%li 
+							%i.icon-group
+							other stuff
+			%li.motion
+				.thumb
+					.student-label
+						Student Name
+				.wide-info
+					.thumb
+					.short-des
+						%h3 Project Title
+						%p
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. 
+				.student-info
+					.headshot
+					%h3 Student Name
+					%p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+					%ul.links
+						%li 
+							%i.icon-book
+							portfolio
+						%li 
+							%i.icon-twitter
+							twitter
+						%li 
+							%i.icon-group
+							other stuff
 		%span.detail
+			.prev
+			.next
+			.project
+				
+				.project-photos
+					.project-description	
+						%h2 Project Title
+						%p
+							The wayfinding in DAAP has been stated to be flawed. Some of the problem areas include corners, where multiple signs are posted, unlabeled entrances, the naming of staircases, elevators, and areas of DAAP, and the directories that are placed at entrances. Overall, the wayfinding fails to direct newcomers or long-time students to necessary locations such as faculty offices, school offices, the CGC, the cafe, the photo lab, the woodshop, and the DAAPstore. 
+				.student-info
+					.headshot
+					%h3 Student Name
+					%p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+					%ul.links
+						%li 
+							%i.icon-book
+							portfolio
+						%li 
+							%i.icon-twitter
+							twitter
+						%li 
+							%i.icon-group
+							other stuff
 		%ul.row.five
-			%li
-			%li
-			%li
-			%li
-			%li
+			%li.motion
+				.thumb
+					.student-label
+						Student Name
+				.wide-info
+					.thumb
+					.short-des
+						%h3 Project Title
+						%p
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. 
+				.student-info
+					.headshot
+					%h3 Student Name
+					%p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+					%ul.links
+						%li 
+							%i.icon-book
+							portfolio
+						%li 
+							%i.icon-twitter
+							twitter
+						%li 
+							%i.icon-group
+							other stuff
+			%li.print
+				.thumb
+					.student-label
+						Student Name
+				.wide-info
+					.thumb
+					.short-des
+						%h3 Project Title
+						%p
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. 
+				.student-info
+					.headshot
+					%h3 Student Name
+					%p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+					%ul.links
+						%li 
+							%i.icon-book
+							portfolio
+						%li 
+							%i.icon-twitter
+							twitter
+						%li 
+							%i.icon-group
+							other stuff
+			%li.print
+				.thumb
+					.student-label
+						Student Name
+				.wide-info
+					.thumb
+					.short-des
+						%h3 Project Title
+						%p
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. 
+				.student-info
+					.headshot
+					%h3 Student Name
+					%p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+					%ul.links
+						%li 
+							%i.icon-book
+							portfolio
+						%li 
+							%i.icon-twitter
+							twitter
+						%li 
+							%i.icon-group
+							other stuff
+			%li.interactive
+				.thumb
+					.student-label
+						Student Name
+				.wide-info
+					.thumb
+					.short-des
+						%h3 Project Title
+						%p
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. 
+				.student-info
+					.headshot
+					%h3 Student Name
+					%p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+					%ul.links
+						%li 
+							%i.icon-book
+							portfolio
+						%li 
+							%i.icon-twitter
+							twitter
+						%li 
+							%i.icon-group
+							other stuff
+			%li.motion
+				.thumb
+					.student-label
+						Student Name
+				.wide-info
+					.thumb
+					.short-des
+						%h3 Project Title
+						%p
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. 
+				.student-info
+					.headshot
+					%h3 Student Name
+					%p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+					%ul.links
+						%li 
+							%i.icon-book
+							portfolio
+						%li 
+							%i.icon-twitter
+							twitter
+						%li 
+							%i.icon-group
+							other stuff
 		%span.detail
+			.prev
+			.next
+			.project
+				
+				.project-photos
+					.project-description	
+						%h2 Project Title
+						%p
+							The wayfinding in DAAP has been stated to be flawed. Some of the problem areas include corners, where multiple signs are posted, unlabeled entrances, the naming of staircases, elevators, and areas of DAAP, and the directories that are placed at entrances. Overall, the wayfinding fails to direct newcomers or long-time students to necessary locations such as faculty offices, school offices, the CGC, the cafe, the photo lab, the woodshop, and the DAAPstore. 
+				.student-info
+					.headshot
+					%h3 Student Name
+					%p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+					%ul.links
+						%li 
+							%i.icon-book
+							portfolio
+						%li 
+							%i.icon-twitter
+							twitter
+						%li 
+							%i.icon-group
+							other stuff

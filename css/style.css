@@ -21,9 +21,18 @@ p {
 .hyperheader {
   display: block;
   width: 100%;
-  height: 800px;
+  height: 540px;
   background: lightgrey;
-  background-image: url("/images/header-bullshit-01.png"); }
+  overflow: auto;
+  position: relative; }
+
+.dude-guy {
+  height: 295px;
+  width: 232px;
+  background-image: url("/images/guy.png");
+  position: absolute;
+  left: 300px;
+  top: 200px; }
 
 #about {
   display: block;
@@ -47,32 +56,38 @@ p {
     float: right; }
 
 #nav {
+  position: fixed;
+  top: 0;
+  z-index: 10000; }
+
+.subnav {
+  position: relative;
+  z-index: 9000;
+  margin-bottom: 30px; }
+
+#nav, .subnav {
   height: 54px;
   background: #4d4d4d;
   color: white;
-  position: relative;
   border-top: 1px solid black;
-  z-index: 10000;
   text-align: center;
-  position: fixed;
-  top: 0;
   width: 100%;
   max-width: 1000px;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25); }
-  #nav ul {
+  #nav ul, .subnav ul {
     display: block;
     list-style: none;
     position: relative;
     z-index: 100;
     margin: auto; }
-    #nav ul:after {
+    #nav ul:after, .subnav ul:after {
       content: ".";
       display: block;
       clear: both;
       visibility: hidden;
       line-height: 0;
       height: 0; }
-    #nav ul li {
+    #nav ul li, .subnav ul li {
       float: left;
       margin-right: 20px;
       margin-top: 5px;
@@ -82,13 +97,13 @@ p {
       border: 1px solid transparent;
       padding: 10px 10px 0;
       cursor: pointer; }
-      #nav ul li h1 {
+      #nav ul li h1, .subnav ul li h1 {
         margin: 0;
         position: relative;
         top: -10px; }
-      #nav ul li:hover {
+      #nav ul li:hover, .subnav ul li:hover {
         border: 1px solid #333333; }
-        #nav ul li:hover:last-child, #nav ul li:hover:first-child {
+        #nav ul li:hover:first-child, .subnav ul li:hover:first-child {
           border: 1px solid transparent; }
 
 #people {
@@ -97,7 +112,7 @@ p {
   background: lightgrey;
   max-width: 1000px;
   top: 50px;
-  z-index: 1;
+  z-index: 10000;
   overflow: hidden;
   height: 355px;
   margin: auto;
@@ -309,7 +324,7 @@ ul.row {
     ul.row li:active .detail {
       height: 0; }
   ul.row:active + .detail, ul.row.active + .detail {
-    height: 570px;
+    height: 620px;
     padding: 30px 30px 20px;
     opacity: 1;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.25) inset; }
@@ -340,11 +355,13 @@ ul.row.wide li {
         ul.row.wide li:active .wide-info .thumb:after, ul.row.wide li.active .wide-info .thumb:after {
           display: none; }
       ul.row.wide li:active .wide-info .short-des, ul.row.wide li.active .wide-info .short-des {
-        width: 30%;
+        width: 33%;
+        height: 360px;
         position: absolute;
-        top: 30px;
-        left: 30px;
+        top: 5px;
+        left: 5px;
         padding: 15px;
+        margin: 0;
         background: rgba(0, 0, 0, 0.6);
         color: white; }
     ul.row.wide li:active .student-info, ul.row.wide li.active .student-info {
@@ -462,33 +479,6 @@ ul.row.wide li {
     margin-top: 0; }
   .detail:hover {
     background: rgba(0, 0, 0, 0.05); }
-  .detail .prev, .detail .next {
-    position: absolute;
-    height: 100%;
-    width: 25px;
-    margin-top: -30px;
-    background: lightgrey;
-    cursor: pointer;
-    visibility: hidden;
-    z-index: 1000; }
-    .detail .prev:hover, .detail .next:hover {
-      background: lightgrey; }
-    .detail .prev::after, .detail .next::after {
-      content: "";
-      display: block;
-      position: relative;
-      top: 50%;
-      width: 0;
-      height: 0;
-      border: solid 15px; }
-    .detail .prev.visible, .detail .next.visible {
-      visibility: visible; }
-  .detail .prev {
-    left: 0; }
-    .detail .prev::after {
-      border-color: transparent #fdf6e3 transparent transparent;
-      position: relative;
-      left: -5px; }
   .detail .next {
     right: 0; }
     .detail .next::after {
@@ -498,20 +488,76 @@ ul.row.wide li {
   .detail .project {
     position: relative;
     -webkit-transition: left 0.3s; }
+    .detail .project h2 {
+      margin-top: 0; }
     .detail .project .project-photos {
       display: inline-block;
       position: relative;
       width: 100%;
       height: 360px;
       background: lightgrey;
-      background-image: url("/images/1-image1.jpg"); }
+      overflow: hidden; }
+      .detail .project .project-photos ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        position: relative;
+        -webkit-transition: left 0.3s; }
+        .detail .project .project-photos ul li {
+          width: 100%;
+          position: absolute;
+          top: 0; }
+          .detail .project .project-photos ul li:nth-child(2) {
+            left: 100%; }
+          .detail .project .project-photos ul li img {
+            width: 100%; }
+      .detail .project .project-photos:hover .prev, .detail .project .project-photos:hover .next {
+        opacity: 1; }
+      .detail .project .project-photos.active ul {
+        left: -100%; }
+      .detail .project .project-photos.active .project-description {
+        left: -100%; }
+      .detail .project .project-photos .prev {
+        position: absolute;
+        height: 50px;
+        width: 50px;
+        top: 50%;
+        left: 10%;
+        background: rgba(0, 0, 0, 0.5);
+        border-radius: 50%;
+        padding: 15px 8px;
+        cursor: pointer; }
+        .detail .project .project-photos .prev .left-arrow {
+          height: 0;
+          width: 0;
+          border: solid 10px;
+          border-color: transparent white transparent transparent; }
+      .detail .project .project-photos .next {
+        position: absolute;
+        height: 50px;
+        width: 50px;
+        top: 50%;
+        left: 90%;
+        background: rgba(0, 0, 0, 0.5);
+        border-radius: 50%;
+        padding: 15px 22px;
+        cursor: pointer; }
+        .detail .project .project-photos .next .right-arrow {
+          height: 0;
+          width: 0;
+          border: solid 10px;
+          border-color: transparent transparent transparent white; }
+      .detail .project .project-photos .prev, .detail .project .project-photos .next {
+        opacity: 0;
+        -webkit-transition: opacity 0.3s; }
       .detail .project .project-photos .project-description {
         position: absolute;
         padding: 15px;
         background: rgba(0, 0, 0, 0.6);
         width: 33%;
         height: 100%;
-        color: white; }
+        color: white;
+        -webkit-transition: left 0.3s; }
         .detail .project .project-photos .project-description .quote {
           font-weight: bold;
           color: darklightgray;
@@ -574,3 +620,6 @@ ul.row.wide li {
     .small-profile .profile .profile-description {
       width: 70%;
       display: inline-block; }
+
+.filter {
+  opacity: 0.25; }

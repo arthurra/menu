@@ -27,32 +27,48 @@
         	$("#map").click(function () {
         		$(this).toggleClass("map");
         	});
+        
+        	$("#print").click(function () {
+        		$("li.motion").toggleClass("filter");
+        		$("li.interactive").toggleClass("filter");
+        	});
+        
+        	$("#motion").click(function () {
+        		$("li.print").toggleClass("filter");
+        		$("li.interactive").toggleClass("filter");
+        	});
+        
+        	$("#interactive").click(function () {
+        		$("li.motion").toggleClass("filter");
+        		$("li.print").toggleClass("filter");
+        	});
+        
+        	$("#all").click(function () {
+        		$("li").removeClass("filter");
+        	});
+        
+        	$("div .project-photos").click(function () {
+        		$(this).toggleClass("active");
+        	});
         });
         window.onload = window.location.hash = 'map';
       //]]>
     </script>
   </head>
   <body>
-    <div class='hyperheader'></div>
+    <div class='hyperheader'>
+      <img src='images/header-bullshit-03.png'>
+    </div>
+    <div class='dude-guy'></div>
     <div id='nav'>
       <ul>
         <li>
           <h1>GRCD 2013</h1>
         </li>
-        <li>print</li>
-        <li>motion</li>
-        <li>interactive</li>
+        <li>projects</li>
+        <li>about</li>
+        <li>map</li>
         <li id='people-link'>people</li>
-        <li>
-          <div class='layout'>
-            <div class='layout-button'>
-              <i class='icon-reorder'></i>
-            </div>
-            <div class='layout-button'>
-              <i class='icon-th'></i>
-            </div>
-          </div>
-        </li>
       </ul>
     </div>
     <div class='hidden' id='people'>
@@ -167,8 +183,27 @@
         </li>
       </ul>
     </div>
+    <div class='subnav'>
+      <ul>
+        <li>view:</li>
+        <li id='all'>all</li>
+        <li id='print'>print</li>
+        <li id='motion'>motion</li>
+        <li id='interactive'>interactive</li>
+        <li>
+          <div class='layout'>
+            <div class='layout-button'>
+              <i class='icon-reorder'></i>
+            </div>
+            <div class='layout-button'>
+              <i class='icon-th'></i>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
     <ul class='row five'>
-      <li>
+      <li class='print'>
         <div class='thumb'>
           <div class='student-label'>
             Student Name
@@ -203,7 +238,7 @@
           </ul>
         </div>
       </li>
-      <li>
+      <li class='interactive'>
         <div class='thumb'>
           <div class='student-label'>
             Student Name
@@ -238,7 +273,7 @@
           </ul>
         </div>
       </li>
-      <li>
+      <li class='print'>
         <div class='thumb'>
           <div class='student-label'>
             Student Name
@@ -273,7 +308,7 @@
           </ul>
         </div>
       </li>
-      <li>
+      <li class='motion'>
         <div class='thumb'>
           <div class='student-label'>
             Student Name
@@ -308,7 +343,231 @@
           </ul>
         </div>
       </li>
-      <li>
+      <li class='interactive'>
+        <div class='thumb'>
+          <div class='student-label'>
+            Student Name
+          </div>
+        </div>
+        <div class='wide-info'>
+          <div class='thumb'></div>
+          <div class='short-des'>
+            <h3>Project Title</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+            </p>
+          </div>
+        </div>
+        <div class='student-info'>
+          <div class='headshot'></div>
+          <h3>Student Name</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.</p>
+          <ul class='links'>
+            <li>
+              <i class='icon-book'></i>
+              portfolio
+            </li>
+            <li>
+              <i class='icon-twitter'></i>
+              twitter
+            </li>
+            <li>
+              <i class='icon-group'></i>
+              other stuff
+            </li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+    <span class='detail'>
+      <div class='prev'></div>
+      <div class='next'></div>
+      <div class='project'>
+        <h2>Project Title</h2>
+        <div class='project-photos'>
+          <ul>
+            <li>
+              <img src='/images/1-image1.jpg'>
+            </li>
+            <li>
+              <img src='/images/1-image2.jpg'>
+            </li>
+          </ul>
+          <div class='prev'>
+            <div class='left-arrow'></div>
+          </div>
+          <div class='next'>
+            <div class='right-arrow'></div>
+          </div>
+          <div class='project-description'>
+            <p>
+              The wayfinding in DAAP has been stated to be flawed. Some of the problem areas include corners, where multiple signs are posted, unlabeled entrances, the naming of staircases, elevators, and areas of DAAP, and the directories that are placed at entrances. Overall, the wayfinding fails to direct newcomers or long-time students to necessary locations such as faculty offices, school offices, the CGC, the cafe, the photo lab, the woodshop, and the DAAPstore.
+            </p>
+          </div>
+        </div>
+        <div class='student-info'>
+          <div class='headshot'></div>
+          <h3>Student Name</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.</p>
+          <ul class='links'>
+            <li>
+              <i class='icon-book'></i>
+              portfolio
+            </li>
+            <li>
+              <i class='icon-twitter'></i>
+              twitter
+            </li>
+            <li>
+              <i class='icon-group'></i>
+              other stuff
+            </li>
+          </ul>
+        </div>
+      </div>
+    </span>
+    <ul class='row five'>
+      <li class='motion'>
+        <div class='thumb'>
+          <div class='student-label'>
+            Student Name
+          </div>
+        </div>
+        <div class='wide-info'>
+          <div class='thumb'></div>
+          <div class='short-des'>
+            <h3>Project Title</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+            </p>
+          </div>
+        </div>
+        <div class='student-info'>
+          <div class='headshot'></div>
+          <h3>Student Name</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.</p>
+          <ul class='links'>
+            <li>
+              <i class='icon-book'></i>
+              portfolio
+            </li>
+            <li>
+              <i class='icon-twitter'></i>
+              twitter
+            </li>
+            <li>
+              <i class='icon-group'></i>
+              other stuff
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li class='print'>
+        <div class='thumb'>
+          <div class='student-label'>
+            Student Name
+          </div>
+        </div>
+        <div class='wide-info'>
+          <div class='thumb'></div>
+          <div class='short-des'>
+            <h3>Project Title</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+            </p>
+          </div>
+        </div>
+        <div class='student-info'>
+          <div class='headshot'></div>
+          <h3>Student Name</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.</p>
+          <ul class='links'>
+            <li>
+              <i class='icon-book'></i>
+              portfolio
+            </li>
+            <li>
+              <i class='icon-twitter'></i>
+              twitter
+            </li>
+            <li>
+              <i class='icon-group'></i>
+              other stuff
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li class='print'>
+        <div class='thumb'>
+          <div class='student-label'>
+            Student Name
+          </div>
+        </div>
+        <div class='wide-info'>
+          <div class='thumb'></div>
+          <div class='short-des'>
+            <h3>Project Title</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+            </p>
+          </div>
+        </div>
+        <div class='student-info'>
+          <div class='headshot'></div>
+          <h3>Student Name</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.</p>
+          <ul class='links'>
+            <li>
+              <i class='icon-book'></i>
+              portfolio
+            </li>
+            <li>
+              <i class='icon-twitter'></i>
+              twitter
+            </li>
+            <li>
+              <i class='icon-group'></i>
+              other stuff
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li class='motion'>
+        <div class='thumb'>
+          <div class='student-label'>
+            Student Name
+          </div>
+        </div>
+        <div class='wide-info'>
+          <div class='thumb'></div>
+          <div class='short-des'>
+            <h3>Project Title</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+            </p>
+          </div>
+        </div>
+        <div class='student-info'>
+          <div class='headshot'></div>
+          <h3>Student Name</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.</p>
+          <ul class='links'>
+            <li>
+              <i class='icon-book'></i>
+              portfolio
+            </li>
+            <li>
+              <i class='icon-twitter'></i>
+              twitter
+            </li>
+            <li>
+              <i class='icon-group'></i>
+              other stuff
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li class='interactive'>
         <div class='thumb'>
           <div class='student-label'>
             Student Name
@@ -378,7 +637,7 @@
       </div>
     </span>
     <ul class='row five'>
-      <li>
+      <li class='interactive'>
         <div class='thumb'>
           <div class='student-label'>
             Student Name
@@ -413,7 +672,7 @@
           </ul>
         </div>
       </li>
-      <li>
+      <li class='print'>
         <div class='thumb'>
           <div class='student-label'>
             Student Name
@@ -448,7 +707,7 @@
           </ul>
         </div>
       </li>
-      <li>
+      <li class='motion'>
         <div class='thumb'>
           <div class='student-label'>
             Student Name
@@ -483,7 +742,7 @@
           </ul>
         </div>
       </li>
-      <li>
+      <li class='print'>
         <div class='thumb'>
           <div class='student-label'>
             Student Name
@@ -518,217 +777,7 @@
           </ul>
         </div>
       </li>
-      <li>
-        <div class='thumb'>
-          <div class='student-label'>
-            Student Name
-          </div>
-        </div>
-        <div class='wide-info'>
-          <div class='thumb'></div>
-          <div class='short-des'>
-            <h3>Project Title</h3>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
-            </p>
-          </div>
-        </div>
-        <div class='student-info'>
-          <div class='headshot'></div>
-          <h3>Student Name</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.</p>
-          <ul class='links'>
-            <li>
-              <i class='icon-book'></i>
-              portfolio
-            </li>
-            <li>
-              <i class='icon-twitter'></i>
-              twitter
-            </li>
-            <li>
-              <i class='icon-group'></i>
-              other stuff
-            </li>
-          </ul>
-        </div>
-      </li>
-    </ul>
-    <span class='detail'>
-      <div class='prev'></div>
-      <div class='next'></div>
-      <div class='project'>
-        <div class='project-photos'>
-          <div class='project-description'>
-            <h2>Project Title</h2>
-            <p>
-              The wayfinding in DAAP has been stated to be flawed. Some of the problem areas include corners, where multiple signs are posted, unlabeled entrances, the naming of staircases, elevators, and areas of DAAP, and the directories that are placed at entrances. Overall, the wayfinding fails to direct newcomers or long-time students to necessary locations such as faculty offices, school offices, the CGC, the cafe, the photo lab, the woodshop, and the DAAPstore.
-            </p>
-          </div>
-        </div>
-        <div class='student-info'>
-          <div class='headshot'></div>
-          <h3>Student Name</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.</p>
-          <ul class='links'>
-            <li>
-              <i class='icon-book'></i>
-              portfolio
-            </li>
-            <li>
-              <i class='icon-twitter'></i>
-              twitter
-            </li>
-            <li>
-              <i class='icon-group'></i>
-              other stuff
-            </li>
-          </ul>
-        </div>
-      </div>
-    </span>
-    <ul class='row five'>
-      <li>
-        <div class='thumb'>
-          <div class='student-label'>
-            Student Name
-          </div>
-        </div>
-        <div class='wide-info'>
-          <div class='thumb'></div>
-          <div class='short-des'>
-            <h3>Project Title</h3>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
-            </p>
-          </div>
-        </div>
-        <div class='student-info'>
-          <div class='headshot'></div>
-          <h3>Student Name</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.</p>
-          <ul class='links'>
-            <li>
-              <i class='icon-book'></i>
-              portfolio
-            </li>
-            <li>
-              <i class='icon-twitter'></i>
-              twitter
-            </li>
-            <li>
-              <i class='icon-group'></i>
-              other stuff
-            </li>
-          </ul>
-        </div>
-      </li>
-      <li>
-        <div class='thumb'>
-          <div class='student-label'>
-            Student Name
-          </div>
-        </div>
-        <div class='wide-info'>
-          <div class='thumb'></div>
-          <div class='short-des'>
-            <h3>Project Title</h3>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
-            </p>
-          </div>
-        </div>
-        <div class='student-info'>
-          <div class='headshot'></div>
-          <h3>Student Name</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.</p>
-          <ul class='links'>
-            <li>
-              <i class='icon-book'></i>
-              portfolio
-            </li>
-            <li>
-              <i class='icon-twitter'></i>
-              twitter
-            </li>
-            <li>
-              <i class='icon-group'></i>
-              other stuff
-            </li>
-          </ul>
-        </div>
-      </li>
-      <li>
-        <div class='thumb'>
-          <div class='student-label'>
-            Student Name
-          </div>
-        </div>
-        <div class='wide-info'>
-          <div class='thumb'></div>
-          <div class='short-des'>
-            <h3>Project Title</h3>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
-            </p>
-          </div>
-        </div>
-        <div class='student-info'>
-          <div class='headshot'></div>
-          <h3>Student Name</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.</p>
-          <ul class='links'>
-            <li>
-              <i class='icon-book'></i>
-              portfolio
-            </li>
-            <li>
-              <i class='icon-twitter'></i>
-              twitter
-            </li>
-            <li>
-              <i class='icon-group'></i>
-              other stuff
-            </li>
-          </ul>
-        </div>
-      </li>
-      <li>
-        <div class='thumb'>
-          <div class='student-label'>
-            Student Name
-          </div>
-        </div>
-        <div class='wide-info'>
-          <div class='thumb'></div>
-          <div class='short-des'>
-            <h3>Project Title</h3>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
-            </p>
-          </div>
-        </div>
-        <div class='student-info'>
-          <div class='headshot'></div>
-          <h3>Student Name</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.</p>
-          <ul class='links'>
-            <li>
-              <i class='icon-book'></i>
-              portfolio
-            </li>
-            <li>
-              <i class='icon-twitter'></i>
-              twitter
-            </li>
-            <li>
-              <i class='icon-group'></i>
-              other stuff
-            </li>
-          </ul>
-        </div>
-      </li>
-      <li>
+      <li class='motion'>
         <div class='thumb'>
           <div class='student-label'>
             Student Name
@@ -798,58 +847,1054 @@
       </div>
     </span>
     <ul class='row five'>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
+      <li class='interactive'>
+        <div class='thumb'>
+          <div class='student-label'>
+            Student Name
+          </div>
+        </div>
+        <div class='wide-info'>
+          <div class='thumb'></div>
+          <div class='short-des'>
+            <h3>Project Title</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+            </p>
+          </div>
+        </div>
+        <div class='student-info'>
+          <div class='headshot'></div>
+          <h3>Student Name</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.</p>
+          <ul class='links'>
+            <li>
+              <i class='icon-book'></i>
+              portfolio
+            </li>
+            <li>
+              <i class='icon-twitter'></i>
+              twitter
+            </li>
+            <li>
+              <i class='icon-group'></i>
+              other stuff
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li class='interactive'>
+        <div class='thumb'>
+          <div class='student-label'>
+            Student Name
+          </div>
+        </div>
+        <div class='wide-info'>
+          <div class='thumb'></div>
+          <div class='short-des'>
+            <h3>Project Title</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+            </p>
+          </div>
+        </div>
+        <div class='student-info'>
+          <div class='headshot'></div>
+          <h3>Student Name</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.</p>
+          <ul class='links'>
+            <li>
+              <i class='icon-book'></i>
+              portfolio
+            </li>
+            <li>
+              <i class='icon-twitter'></i>
+              twitter
+            </li>
+            <li>
+              <i class='icon-group'></i>
+              other stuff
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li class='print'>
+        <div class='thumb'>
+          <div class='student-label'>
+            Student Name
+          </div>
+        </div>
+        <div class='wide-info'>
+          <div class='thumb'></div>
+          <div class='short-des'>
+            <h3>Project Title</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+            </p>
+          </div>
+        </div>
+        <div class='student-info'>
+          <div class='headshot'></div>
+          <h3>Student Name</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.</p>
+          <ul class='links'>
+            <li>
+              <i class='icon-book'></i>
+              portfolio
+            </li>
+            <li>
+              <i class='icon-twitter'></i>
+              twitter
+            </li>
+            <li>
+              <i class='icon-group'></i>
+              other stuff
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li class='motion'>
+        <div class='thumb'>
+          <div class='student-label'>
+            Student Name
+          </div>
+        </div>
+        <div class='wide-info'>
+          <div class='thumb'></div>
+          <div class='short-des'>
+            <h3>Project Title</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+            </p>
+          </div>
+        </div>
+        <div class='student-info'>
+          <div class='headshot'></div>
+          <h3>Student Name</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.</p>
+          <ul class='links'>
+            <li>
+              <i class='icon-book'></i>
+              portfolio
+            </li>
+            <li>
+              <i class='icon-twitter'></i>
+              twitter
+            </li>
+            <li>
+              <i class='icon-group'></i>
+              other stuff
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li class='print'>
+        <div class='thumb'>
+          <div class='student-label'>
+            Student Name
+          </div>
+        </div>
+        <div class='wide-info'>
+          <div class='thumb'></div>
+          <div class='short-des'>
+            <h3>Project Title</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+            </p>
+          </div>
+        </div>
+        <div class='student-info'>
+          <div class='headshot'></div>
+          <h3>Student Name</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.</p>
+          <ul class='links'>
+            <li>
+              <i class='icon-book'></i>
+              portfolio
+            </li>
+            <li>
+              <i class='icon-twitter'></i>
+              twitter
+            </li>
+            <li>
+              <i class='icon-group'></i>
+              other stuff
+            </li>
+          </ul>
+        </div>
+      </li>
     </ul>
     <span class='detail'>
+      <div class='prev'></div>
+      <div class='next'></div>
       <div class='project'>
-        <h2>Project Title</h2>
-        <div class='project-photos'></div>
-        <div class='prject-description'>
-          <h3>Project Description</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. In id diam vel augue pharetra ornare eu a magna. Vestibulum quis risus laoreet enim egestas vehicula non quis tellus. In sapien orci, condimentum ac accumsan at, ornare accumsan arcu. Integer et euismod est.
-          </p>
-          <h4 class='quote'>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          </h4>
+        <div class='project-photos'>
+          <div class='project-description'>
+            <h2>Project Title</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies. In id diam vel augue pharetra ornare eu a magna. Vestibulum quis risus laoreet enim egestas vehicula non quis tellus. In sapien orci, condimentum ac accumsan at, ornare accumsan arcu. Integer et euismod est.
+            </p>
+          </div>
+        </div>
+        <div class='student-info'>
+          <div class='headshot'></div>
+          <h3>Student Name</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.</p>
+          <ul class='links'>
+            <li>
+              <i class='icon-book'></i>
+              portfolio
+            </li>
+            <li>
+              <i class='icon-twitter'></i>
+              twitter
+            </li>
+            <li>
+              <i class='icon-group'></i>
+              other stuff
+            </li>
+          </ul>
         </div>
       </div>
     </span>
     <ul class='row five'>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
+      <li class='motion'>
+        <div class='thumb'>
+          <div class='student-label'>
+            Student Name
+          </div>
+        </div>
+        <div class='wide-info'>
+          <div class='thumb'></div>
+          <div class='short-des'>
+            <h3>Project Title</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+            </p>
+          </div>
+        </div>
+        <div class='student-info'>
+          <div class='headshot'></div>
+          <h3>Student Name</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.</p>
+          <ul class='links'>
+            <li>
+              <i class='icon-book'></i>
+              portfolio
+            </li>
+            <li>
+              <i class='icon-twitter'></i>
+              twitter
+            </li>
+            <li>
+              <i class='icon-group'></i>
+              other stuff
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li class='interactive'>
+        <div class='thumb'>
+          <div class='student-label'>
+            Student Name
+          </div>
+        </div>
+        <div class='wide-info'>
+          <div class='thumb'></div>
+          <div class='short-des'>
+            <h3>Project Title</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+            </p>
+          </div>
+        </div>
+        <div class='student-info'>
+          <div class='headshot'></div>
+          <h3>Student Name</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.</p>
+          <ul class='links'>
+            <li>
+              <i class='icon-book'></i>
+              portfolio
+            </li>
+            <li>
+              <i class='icon-twitter'></i>
+              twitter
+            </li>
+            <li>
+              <i class='icon-group'></i>
+              other stuff
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li class='motion'>
+        <div class='thumb'>
+          <div class='student-label'>
+            Student Name
+          </div>
+        </div>
+        <div class='wide-info'>
+          <div class='thumb'></div>
+          <div class='short-des'>
+            <h3>Project Title</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+            </p>
+          </div>
+        </div>
+        <div class='student-info'>
+          <div class='headshot'></div>
+          <h3>Student Name</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.</p>
+          <ul class='links'>
+            <li>
+              <i class='icon-book'></i>
+              portfolio
+            </li>
+            <li>
+              <i class='icon-twitter'></i>
+              twitter
+            </li>
+            <li>
+              <i class='icon-group'></i>
+              other stuff
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li class='print'>
+        <div class='thumb'>
+          <div class='student-label'>
+            Student Name
+          </div>
+        </div>
+        <div class='wide-info'>
+          <div class='thumb'></div>
+          <div class='short-des'>
+            <h3>Project Title</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+            </p>
+          </div>
+        </div>
+        <div class='student-info'>
+          <div class='headshot'></div>
+          <h3>Student Name</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.</p>
+          <ul class='links'>
+            <li>
+              <i class='icon-book'></i>
+              portfolio
+            </li>
+            <li>
+              <i class='icon-twitter'></i>
+              twitter
+            </li>
+            <li>
+              <i class='icon-group'></i>
+              other stuff
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li class='print'>
+        <div class='thumb'>
+          <div class='student-label'>
+            Student Name
+          </div>
+        </div>
+        <div class='wide-info'>
+          <div class='thumb'></div>
+          <div class='short-des'>
+            <h3>Project Title</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+            </p>
+          </div>
+        </div>
+        <div class='student-info'>
+          <div class='headshot'></div>
+          <h3>Student Name</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.</p>
+          <ul class='links'>
+            <li>
+              <i class='icon-book'></i>
+              portfolio
+            </li>
+            <li>
+              <i class='icon-twitter'></i>
+              twitter
+            </li>
+            <li>
+              <i class='icon-group'></i>
+              other stuff
+            </li>
+          </ul>
+        </div>
+      </li>
     </ul>
-    <span class='detail'></span>
+    <span class='detail'>
+      <div class='prev'></div>
+      <div class='next'></div>
+      <div class='project'>
+        <div class='project-photos'>
+          <div class='project-description'>
+            <h2>Project Title</h2>
+            <p>
+              The wayfinding in DAAP has been stated to be flawed. Some of the problem areas include corners, where multiple signs are posted, unlabeled entrances, the naming of staircases, elevators, and areas of DAAP, and the directories that are placed at entrances. Overall, the wayfinding fails to direct newcomers or long-time students to necessary locations such as faculty offices, school offices, the CGC, the cafe, the photo lab, the woodshop, and the DAAPstore.
+            </p>
+          </div>
+        </div>
+        <div class='student-info'>
+          <div class='headshot'></div>
+          <h3>Student Name</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.</p>
+          <ul class='links'>
+            <li>
+              <i class='icon-book'></i>
+              portfolio
+            </li>
+            <li>
+              <i class='icon-twitter'></i>
+              twitter
+            </li>
+            <li>
+              <i class='icon-group'></i>
+              other stuff
+            </li>
+          </ul>
+        </div>
+      </div>
+    </span>
     <ul class='row five'>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
+      <li class='interactive'>
+        <div class='thumb'>
+          <div class='student-label'>
+            Student Name
+          </div>
+        </div>
+        <div class='wide-info'>
+          <div class='thumb'></div>
+          <div class='short-des'>
+            <h3>Project Title</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+            </p>
+          </div>
+        </div>
+        <div class='student-info'>
+          <div class='headshot'></div>
+          <h3>Student Name</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.</p>
+          <ul class='links'>
+            <li>
+              <i class='icon-book'></i>
+              portfolio
+            </li>
+            <li>
+              <i class='icon-twitter'></i>
+              twitter
+            </li>
+            <li>
+              <i class='icon-group'></i>
+              other stuff
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li class='interactive'>
+        <div class='thumb'>
+          <div class='student-label'>
+            Student Name
+          </div>
+        </div>
+        <div class='wide-info'>
+          <div class='thumb'></div>
+          <div class='short-des'>
+            <h3>Project Title</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+            </p>
+          </div>
+        </div>
+        <div class='student-info'>
+          <div class='headshot'></div>
+          <h3>Student Name</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.</p>
+          <ul class='links'>
+            <li>
+              <i class='icon-book'></i>
+              portfolio
+            </li>
+            <li>
+              <i class='icon-twitter'></i>
+              twitter
+            </li>
+            <li>
+              <i class='icon-group'></i>
+              other stuff
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li class='motion'>
+        <div class='thumb'>
+          <div class='student-label'>
+            Student Name
+          </div>
+        </div>
+        <div class='wide-info'>
+          <div class='thumb'></div>
+          <div class='short-des'>
+            <h3>Project Title</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+            </p>
+          </div>
+        </div>
+        <div class='student-info'>
+          <div class='headshot'></div>
+          <h3>Student Name</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.</p>
+          <ul class='links'>
+            <li>
+              <i class='icon-book'></i>
+              portfolio
+            </li>
+            <li>
+              <i class='icon-twitter'></i>
+              twitter
+            </li>
+            <li>
+              <i class='icon-group'></i>
+              other stuff
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li class='print'>
+        <div class='thumb'>
+          <div class='student-label'>
+            Student Name
+          </div>
+        </div>
+        <div class='wide-info'>
+          <div class='thumb'></div>
+          <div class='short-des'>
+            <h3>Project Title</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+            </p>
+          </div>
+        </div>
+        <div class='student-info'>
+          <div class='headshot'></div>
+          <h3>Student Name</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.</p>
+          <ul class='links'>
+            <li>
+              <i class='icon-book'></i>
+              portfolio
+            </li>
+            <li>
+              <i class='icon-twitter'></i>
+              twitter
+            </li>
+            <li>
+              <i class='icon-group'></i>
+              other stuff
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li class='print'>
+        <div class='thumb'>
+          <div class='student-label'>
+            Student Name
+          </div>
+        </div>
+        <div class='wide-info'>
+          <div class='thumb'></div>
+          <div class='short-des'>
+            <h3>Project Title</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+            </p>
+          </div>
+        </div>
+        <div class='student-info'>
+          <div class='headshot'></div>
+          <h3>Student Name</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.</p>
+          <ul class='links'>
+            <li>
+              <i class='icon-book'></i>
+              portfolio
+            </li>
+            <li>
+              <i class='icon-twitter'></i>
+              twitter
+            </li>
+            <li>
+              <i class='icon-group'></i>
+              other stuff
+            </li>
+          </ul>
+        </div>
+      </li>
     </ul>
-    <span class='detail'></span>
+    <span class='detail'>
+      <div class='prev'></div>
+      <div class='next'></div>
+      <div class='project'>
+        <div class='project-photos'>
+          <div class='project-description'>
+            <h2>Project Title</h2>
+            <p>
+              The wayfinding in DAAP has been stated to be flawed. Some of the problem areas include corners, where multiple signs are posted, unlabeled entrances, the naming of staircases, elevators, and areas of DAAP, and the directories that are placed at entrances. Overall, the wayfinding fails to direct newcomers or long-time students to necessary locations such as faculty offices, school offices, the CGC, the cafe, the photo lab, the woodshop, and the DAAPstore.
+            </p>
+          </div>
+        </div>
+        <div class='student-info'>
+          <div class='headshot'></div>
+          <h3>Student Name</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.</p>
+          <ul class='links'>
+            <li>
+              <i class='icon-book'></i>
+              portfolio
+            </li>
+            <li>
+              <i class='icon-twitter'></i>
+              twitter
+            </li>
+            <li>
+              <i class='icon-group'></i>
+              other stuff
+            </li>
+          </ul>
+        </div>
+      </div>
+    </span>
     <ul class='row five'>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
+      <li class='motion'>
+        <div class='thumb'>
+          <div class='student-label'>
+            Student Name
+          </div>
+        </div>
+        <div class='wide-info'>
+          <div class='thumb'></div>
+          <div class='short-des'>
+            <h3>Project Title</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+            </p>
+          </div>
+        </div>
+        <div class='student-info'>
+          <div class='headshot'></div>
+          <h3>Student Name</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.</p>
+          <ul class='links'>
+            <li>
+              <i class='icon-book'></i>
+              portfolio
+            </li>
+            <li>
+              <i class='icon-twitter'></i>
+              twitter
+            </li>
+            <li>
+              <i class='icon-group'></i>
+              other stuff
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li class='interactive'>
+        <div class='thumb'>
+          <div class='student-label'>
+            Student Name
+          </div>
+        </div>
+        <div class='wide-info'>
+          <div class='thumb'></div>
+          <div class='short-des'>
+            <h3>Project Title</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+            </p>
+          </div>
+        </div>
+        <div class='student-info'>
+          <div class='headshot'></div>
+          <h3>Student Name</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.</p>
+          <ul class='links'>
+            <li>
+              <i class='icon-book'></i>
+              portfolio
+            </li>
+            <li>
+              <i class='icon-twitter'></i>
+              twitter
+            </li>
+            <li>
+              <i class='icon-group'></i>
+              other stuff
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li class='interactive'>
+        <div class='thumb'>
+          <div class='student-label'>
+            Student Name
+          </div>
+        </div>
+        <div class='wide-info'>
+          <div class='thumb'></div>
+          <div class='short-des'>
+            <h3>Project Title</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+            </p>
+          </div>
+        </div>
+        <div class='student-info'>
+          <div class='headshot'></div>
+          <h3>Student Name</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.</p>
+          <ul class='links'>
+            <li>
+              <i class='icon-book'></i>
+              portfolio
+            </li>
+            <li>
+              <i class='icon-twitter'></i>
+              twitter
+            </li>
+            <li>
+              <i class='icon-group'></i>
+              other stuff
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li class='print'>
+        <div class='thumb'>
+          <div class='student-label'>
+            Student Name
+          </div>
+        </div>
+        <div class='wide-info'>
+          <div class='thumb'></div>
+          <div class='short-des'>
+            <h3>Project Title</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+            </p>
+          </div>
+        </div>
+        <div class='student-info'>
+          <div class='headshot'></div>
+          <h3>Student Name</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.</p>
+          <ul class='links'>
+            <li>
+              <i class='icon-book'></i>
+              portfolio
+            </li>
+            <li>
+              <i class='icon-twitter'></i>
+              twitter
+            </li>
+            <li>
+              <i class='icon-group'></i>
+              other stuff
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li class='motion'>
+        <div class='thumb'>
+          <div class='student-label'>
+            Student Name
+          </div>
+        </div>
+        <div class='wide-info'>
+          <div class='thumb'></div>
+          <div class='short-des'>
+            <h3>Project Title</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+            </p>
+          </div>
+        </div>
+        <div class='student-info'>
+          <div class='headshot'></div>
+          <h3>Student Name</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.</p>
+          <ul class='links'>
+            <li>
+              <i class='icon-book'></i>
+              portfolio
+            </li>
+            <li>
+              <i class='icon-twitter'></i>
+              twitter
+            </li>
+            <li>
+              <i class='icon-group'></i>
+              other stuff
+            </li>
+          </ul>
+        </div>
+      </li>
     </ul>
-    <span class='detail'></span>
+    <span class='detail'>
+      <div class='prev'></div>
+      <div class='next'></div>
+      <div class='project'>
+        <div class='project-photos'>
+          <div class='project-description'>
+            <h2>Project Title</h2>
+            <p>
+              The wayfinding in DAAP has been stated to be flawed. Some of the problem areas include corners, where multiple signs are posted, unlabeled entrances, the naming of staircases, elevators, and areas of DAAP, and the directories that are placed at entrances. Overall, the wayfinding fails to direct newcomers or long-time students to necessary locations such as faculty offices, school offices, the CGC, the cafe, the photo lab, the woodshop, and the DAAPstore.
+            </p>
+          </div>
+        </div>
+        <div class='student-info'>
+          <div class='headshot'></div>
+          <h3>Student Name</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.</p>
+          <ul class='links'>
+            <li>
+              <i class='icon-book'></i>
+              portfolio
+            </li>
+            <li>
+              <i class='icon-twitter'></i>
+              twitter
+            </li>
+            <li>
+              <i class='icon-group'></i>
+              other stuff
+            </li>
+          </ul>
+        </div>
+      </div>
+    </span>
     <ul class='row five'>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
+      <li class='motion'>
+        <div class='thumb'>
+          <div class='student-label'>
+            Student Name
+          </div>
+        </div>
+        <div class='wide-info'>
+          <div class='thumb'></div>
+          <div class='short-des'>
+            <h3>Project Title</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+            </p>
+          </div>
+        </div>
+        <div class='student-info'>
+          <div class='headshot'></div>
+          <h3>Student Name</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.</p>
+          <ul class='links'>
+            <li>
+              <i class='icon-book'></i>
+              portfolio
+            </li>
+            <li>
+              <i class='icon-twitter'></i>
+              twitter
+            </li>
+            <li>
+              <i class='icon-group'></i>
+              other stuff
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li class='print'>
+        <div class='thumb'>
+          <div class='student-label'>
+            Student Name
+          </div>
+        </div>
+        <div class='wide-info'>
+          <div class='thumb'></div>
+          <div class='short-des'>
+            <h3>Project Title</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+            </p>
+          </div>
+        </div>
+        <div class='student-info'>
+          <div class='headshot'></div>
+          <h3>Student Name</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.</p>
+          <ul class='links'>
+            <li>
+              <i class='icon-book'></i>
+              portfolio
+            </li>
+            <li>
+              <i class='icon-twitter'></i>
+              twitter
+            </li>
+            <li>
+              <i class='icon-group'></i>
+              other stuff
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li class='print'>
+        <div class='thumb'>
+          <div class='student-label'>
+            Student Name
+          </div>
+        </div>
+        <div class='wide-info'>
+          <div class='thumb'></div>
+          <div class='short-des'>
+            <h3>Project Title</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+            </p>
+          </div>
+        </div>
+        <div class='student-info'>
+          <div class='headshot'></div>
+          <h3>Student Name</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.</p>
+          <ul class='links'>
+            <li>
+              <i class='icon-book'></i>
+              portfolio
+            </li>
+            <li>
+              <i class='icon-twitter'></i>
+              twitter
+            </li>
+            <li>
+              <i class='icon-group'></i>
+              other stuff
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li class='interactive'>
+        <div class='thumb'>
+          <div class='student-label'>
+            Student Name
+          </div>
+        </div>
+        <div class='wide-info'>
+          <div class='thumb'></div>
+          <div class='short-des'>
+            <h3>Project Title</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+            </p>
+          </div>
+        </div>
+        <div class='student-info'>
+          <div class='headshot'></div>
+          <h3>Student Name</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.</p>
+          <ul class='links'>
+            <li>
+              <i class='icon-book'></i>
+              portfolio
+            </li>
+            <li>
+              <i class='icon-twitter'></i>
+              twitter
+            </li>
+            <li>
+              <i class='icon-group'></i>
+              other stuff
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li class='motion'>
+        <div class='thumb'>
+          <div class='student-label'>
+            Student Name
+          </div>
+        </div>
+        <div class='wide-info'>
+          <div class='thumb'></div>
+          <div class='short-des'>
+            <h3>Project Title</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.
+            </p>
+          </div>
+        </div>
+        <div class='student-info'>
+          <div class='headshot'></div>
+          <h3>Student Name</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.</p>
+          <ul class='links'>
+            <li>
+              <i class='icon-book'></i>
+              portfolio
+            </li>
+            <li>
+              <i class='icon-twitter'></i>
+              twitter
+            </li>
+            <li>
+              <i class='icon-group'></i>
+              other stuff
+            </li>
+          </ul>
+        </div>
+      </li>
     </ul>
-    <span class='detail'></span>
+    <span class='detail'>
+      <div class='prev'></div>
+      <div class='next'></div>
+      <div class='project'>
+        <div class='project-photos'>
+          <div class='project-description'>
+            <h2>Project Title</h2>
+            <p>
+              The wayfinding in DAAP has been stated to be flawed. Some of the problem areas include corners, where multiple signs are posted, unlabeled entrances, the naming of staircases, elevators, and areas of DAAP, and the directories that are placed at entrances. Overall, the wayfinding fails to direct newcomers or long-time students to necessary locations such as faculty offices, school offices, the CGC, the cafe, the photo lab, the woodshop, and the DAAPstore.
+            </p>
+          </div>
+        </div>
+        <div class='student-info'>
+          <div class='headshot'></div>
+          <h3>Student Name</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit tortor, semper at aliquam eget, ullamcorper vel risus. Nulla semper rhoncus dui id ultricies.</p>
+          <ul class='links'>
+            <li>
+              <i class='icon-book'></i>
+              portfolio
+            </li>
+            <li>
+              <i class='icon-twitter'></i>
+              twitter
+            </li>
+            <li>
+              <i class='icon-group'></i>
+              other stuff
+            </li>
+          </ul>
+        </div>
+      </div>
+    </span>
   </body>
 </html>
